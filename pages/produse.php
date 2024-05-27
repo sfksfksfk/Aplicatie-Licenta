@@ -1,3 +1,9 @@
+<?php
+include 'connect.php';
+
+?>
+
+
 <!--
 =========================================================
 * Soft UI Dashboard - v1.0.7
@@ -21,7 +27,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
-    Depozit de picturi electronic
+    Soft UI Dashboard by Creative Tim
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -38,7 +44,7 @@
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 </head>
 
-<body class="g-sidenav-show  bg-gray-100">
+<body class="g-sidenav-show bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
 
@@ -53,7 +59,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link  active" href="../pages/dashboard.html">
+          <a class="nav-link " href="../pages/dashboard.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -73,7 +79,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="tablouri.php">
+          <a class="nav-link " href="tablouri.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -93,7 +99,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/virtual-reality.html">
+          <a class="nav-link  active" href="produse.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -114,7 +120,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/billing.html">
+          <a class="nav-link  " href="clienti.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -135,7 +141,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/sign-in.html">
+          <a class="nav-link  " href="comenzi.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
@@ -155,7 +161,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/profile.html">
+          <a class="nav-link  " href="distribuitori.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>customer-support</title>
@@ -196,33 +202,19 @@
     </div>
   </aside>
 
+  
 
-
-
-
-
-
-
-
-
-  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
-          </ol>
-          <h6 class="font-weight-bolder mb-0">Pagina principala</h6>
-        </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-           <!-- <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
-            </div>-->
+              <!--PLACEHOLDER PT BUTOANELE DIN DREAPTA-->
           </div>
+
+          
           <ul class="navbar-nav  justify-content-end">
             
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -242,384 +234,226 @@
 
 
 
-
-
     <!-- End Navbar -->
     <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
+      <div class="row" >
+        <div id="mainFrameOne">
+        <div class="col-12 mt-4" id="mainFrameOne">
+          
+          <div class="card mb-4">
+            
+            <div class="card-header pb-0 p-3">
+              <h6 class="mb-1">Ultimele 3 produse handmade</h6>
+              <p class="text-sm">Acestea sunt ultimele 3 produse handmade realizate de tine</p>
+            </div>
+
             <div class="card-body p-3">
               <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Ultima luna</p>
-                    <h5 class="font-weight-bolder mb-0">
-                      3200 RON
-                      <span class="text-success text-sm font-weight-bolder">+55%</span>
-                    </h5>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                    <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Ultimul an</p>
-                    <h5 class="font-weight-bolder mb-0">
-                      36000 RON
-                      <span class="text-success text-sm font-weight-bolder">+3%</span>
-                    </h5>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                    <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Tablouri pe stoc</p>
-                    <h5 class="font-weight-bolder mb-0">
-                      56
-                      <span class="text-danger text-sm font-weight-bolder">-2%</span>
-                    </h5>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                    <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Produse Handmade pe stoc</p>
-                    <h5 class="font-weight-bolder mb-0">
-                      352
-                      <span class="text-success text-sm font-weight-bolder">+5%</span>
-                    </h5>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                    <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                <?php
+
+                                
+                    $sqlult3="SELECT * FROM produse ORDER BY cod_produs DESC LIMIT 3";
+                    $result=mysqli_query($con,$sqlult3);
+                    if($result){
+
+                        
+                        while($row=mysqli_fetch_assoc($result)){
+                            $id=$row['cod_produs'];
+                            $nume=$row['nume'];
+                            $sezon=$row['sezon'];
+                            $pret=$row['pret'];
+                            $stoc=$row['stoc'];
+                            $poza=$row['poza'];
 
 
-      <div class="row mt-4">
-        <div class="col-lg-7 mb-lg-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="d-flex flex-column h-100">
-                    <p class="mb-1 pt-2 text-bold">Tabloul cu cele mai multe exemplare pe stoc</p>
-                    <h5 class="font-weight-bolder">Ai 6 pe stoc</h5>
-                    <p class="mb-5">Din acest tip de tablou ai pe stoc 6 exemplare</p>
-                   
-                  </div>
-                </div>
-                <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
-                  <div class="bg-gradient-primary border-radius-lg h-100">
-                    <img src="../assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
-                    <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                      <img class=" w-60 position-relative z-index-2 pt-4 "  src="../media/tablou_1.jpg" alt="tablou">
-                    <p> </p>
-                    </div>
-                    <p> </p><p> </p></br>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                                echo '
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                  <div class="card card-blog card-plain">
+                                    <div class="position-relative">
+                                      <a class="d-block shadow-xl border-radius-xl">
+                                        <img src="../media/poze_produse/'.$poza.'" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                      </a>
+                                    </div>
+                                    <div class="card-body px-1 pb-0">
+                                      <p class="text-gradient text-dark mb-2 text-sm">Produsul #'.$id.'</p>
+                                      <a href="javascript:;">
+                                        <h5>
+                                          '.$nume.'
+                                        </h5>
+                                      </a>
+                                      <p class="mb-4 text-sm">
+                                        Pentru sezonul de '.$sezon.'</br>
+                                        Mai ai pe stoc : '.$stoc.' bucati
+                                      </p>
+                                      <div class="d-flex align-items-center justify-content-between">
+                                        <a class="d-flex align-items-center justify-content-between" href="vizprodus.php?id='.$id.'">
+                                        <button type="submit"  class="btn btn-outline-primary btn-sm mb-0">Vizualizeaza Produs</button>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>';   
+                        }
+                    }
+                       
+                ?>
 
-        <div class="col-lg-5">
-          <div class="card h-100 p-3">
-            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/ivancik.jpg');">
-              <span class="mask bg-gradient-dark"></span>
-              <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
-                <h5 class="text-white font-weight-bolder mb-4 pt-2">Ultima comanda</h5>
-                <p class="text-white">Ultima ta comanda este : ----descrierea din tabelul de comenzi ---  </p>
+
+
+
+
                 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="row mt-4">
-        <div class="col-lg-5 mb-lg-0 mb-4">
-          <div class="card z-index-2">
-            <div class="card-body p-3">
-              <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
-                <div class="chart">
-                  <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
-                </div>
-              </div>
-              <h6 class="ms-2 mt-4 mb-0"> Valoare vanzari ultimul an </h6>
-              <p class="text-sm ms-2"> (<span class="font-weight-bolder">+23%</span>) fata de anul precedent </p>
-              <div class="container border-radius-lg">
-                <div class="row"  >
-                  <div class="col-5 py-3 ps-0">
-                    <div class="d-flex mb-2">
-                      <p class="text-xs mt-1 mb-0 font-weight-bold">Tablouri</p>
-                    </div>
-                    <h4 class="font-weight-bolder">24000 RON</h4>
-                    <div class="progress w-75">
-                      <div class="progress-bar bg-dark w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                
+                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                  <div class="card h-100 card-plain border bg-gradient-primary ">
+                    <div class="card-body d-flex flex-column justify-content-center text-center">
+                      <a href="javascript:;">
+                        <i class="fa fa-plus text-secondary mb-3"></i>
+                        <h5 class=" text-secondary" > Produs nou </h5>
+                      </a>
                     </div>
                   </div>
-                  
-                  <div class="col-5 py-3 ps-0">
-                    <div class="d-flex mb-2">
-                      
-                      <p class="text-xs mt-1 mb-0 font-weight-bold">Produse handmade</p>
-                    </div>
-                    <h4 class="font-weight-bolder">12000 RON</h4>
-                    <div class="progress w-75">
-                      <div class="progress-bar bg-dark w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-
-                  
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-
-        <div class="col-lg-7">
-          <div class="card z-index-2">
+        </div>
+        
+        <div id="mainFrameTwo">
+        <div class="col-12" >
+          <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Analiza vanzarilor pe ultimele 9 luni</h6>
+              <h6>Tablouri</h6>
             </div>
-            <div class="card-body p-3">
-              <div class="chart">
-                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Produs</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sezon</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pret</th>
+                      <th class="text-center text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Stoc</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    
+
+                    
+                  
+            
+          <?php             
+                    $sql="SELECT * FROM produse ";
+                    $result=mysqli_query($con,$sql);
+                    if($result){
+
+                        
+                        while($row=mysqli_fetch_assoc($result)){
+                            $id=$row['cod_produs'];
+                            $nume=$row['nume'];
+                            $sezon=$row['sezon'];
+                            $pret=$row['pret'];
+                            $stoc=$row['stoc'];
+                            $poza=$row['poza'];
+
+          echo ' <tr>
+          <td>
+            <div class="d-flex px-2 py-1">
+              <div>
+                <img src="../media/poze_produse/'.$poza.'" class="avatar avatar-sm me-3" alt="user1">
+              </div>
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm">'.$nume.'</h6>
+
+              </div>
+            </div>
+          </td>
+          <td class="align-middle text-center text-sm">
+          ';
+          if($sezon == "primavara"){
+            echo'            <span class="badge badge-sm bg-gradient-success">'.$sezon.'</span></td>';
+            }
+          if($sezon == "vara"){
+                echo'            <span class="badge badge-sm bg-gradient-danger">'.$sezon.'</span></td>';
+                }
+          if($sezon == "toamna"){
+                    echo'            <span class="badge badge-sm bg-gradient-secondary">'.$sezon.'</span></td>';
+                    }
+          if($sezon == "iarna"){
+                        echo'            <span class="badge badge-sm bg-gradient-info">'.$sezon.'</span></td>';
+                        }
+          
+          echo '<td>
+            <div class="align-middle text-center">
+              
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm">'.$pret.'</h6>
+                <p class="text-xs text-secondary mb-0">ron</p>
+              </div>
+            </div>
+          </td>
+          <td class="align-middle text-center">
+            <span class="text-secondary text-xs font-weight-bold">'.$stoc.'</span>
+          </td>
+          
+          <td class="align-middle">
+            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+              Edit
+            </a>
+          </td>
+        </tr>';
+        
+        }
+    }
+    ?>
+
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
-        </div>
+        </div></div>
+        
+        
+        
       </div>
 
 
-      
-      
-    </div>
-  </main>
+      <footer class="footer pt-3  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                URA <i class="fa fa-heart"></i> by
+                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Sofica Radu</a>
+                for a better web.
+              </div>
+            </div>
 
-   
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
   <!--   Core JS Files   -->
+  <script>
+     function schimbare1() { 
+    document.getElementById("mainFrameOne").style.display="none"; 
+    document.getElementById("mainFrameTwo").style.display="block"; 
+}
+
+  </script>
+
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
-  <script>
-    var ctx = document.getElementById("chart-bars").getContext("2d");
-
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: ["Ian", "Feb", "Mar", "Apr", "Mai", "Iun", "Iul", "Aug", "Sep", "Oct", "Noi", "Dec"],
-        datasets: [{
-          label: "Vanzari",
-          tension: 0.4,
-          borderWidth: 0,
-          borderRadius: 4,
-          borderSkipped: false,
-          backgroundColor: "#fff",
-          data: [120, 50, 300, 450, 200, 100, 220, 500, 100, 400, 230, 500],
-          maxBarThickness: 6
-        }, ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-            },
-            ticks: {
-              suggestedMin: 0,
-              suggestedMax: 500,
-              beginAtZero: true,
-              padding: 15,
-              font: {
-                size: 14,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-              color: "#fff"
-            },
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false
-            },
-            ticks: {
-              display: false
-            },
-          },
-        },
-      },
-    });
-
-
-    var ctx2 = document.getElementById("chart-line").getContext("2d");
-
-    var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
-    gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
-
-    var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
-    gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
-
-    new Chart(ctx2, {
-      type: "line",
-      data: {
-        labels: ["Apr", "Mai", "Iun", "Iul", "Aug", "Sep", "Oct", "Noi", "Dec"],
-        datasets: [{
-            label: "Tablouri",
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#cb0c9f",
-            borderWidth: 3,
-            backgroundColor: gradientStroke1,
-            fill: true,
-            data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-            maxBarThickness: 6
-
-          },
-          {
-            label: "Produse Handmade",
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#3A416F",
-            borderWidth: 3,
-            backgroundColor: gradientStroke2,
-            fill: true,
-            data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
-            maxBarThickness: 6
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#b2b9bf',
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#b2b9bf',
-              padding: 20,
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
-  </script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -633,6 +467,7 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
+
 </body>
 
 </html>

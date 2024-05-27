@@ -2,6 +2,7 @@
   .bg-gradient-#{$prop} {
     @include gradient-directional(nth($value, 1) 0%, nth($value, -1) 100%, $deg: 310deg);
   }
+
 }
 
 @each $prop, $value in $theme-colors {

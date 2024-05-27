@@ -1,3 +1,9 @@
+<?php
+include 'connect.php';
+
+?>
+
+
 <!--
 =========================================================
 * Soft UI Dashboard - v1.0.7
@@ -21,7 +27,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
-    Depozit de picturi electronic
+    Clienti
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -53,7 +59,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link  active" href="../pages/dashboard.html">
+          <a class="nav-link " href="../pages/dashboard.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -73,7 +79,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="tablouri.php">
+          <a class="nav-link " href="../pages/tablouri.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -93,7 +99,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/virtual-reality.html">
+          <a class="nav-link  " href="../pages/produse.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -114,7 +120,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/billing.html">
+          <a class="nav-link " href="../pages/billing.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -135,7 +141,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/sign-in.html">
+          <a class="nav-link active " href="../pages/comenzi.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
@@ -199,22 +205,16 @@
 
 
 
-
-
-
-
-
-
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pagini</a></li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Pagina clienti</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Pagina principala</h6>
+          <h6 class="font-weight-bolder mb-0">Clienti</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -239,387 +239,135 @@
         </div>
       </div>
     </nav>
-
-
-
-
-
     <!-- End Navbar -->
     <div class="container-fluid py-4">
+        
+
+
+
+
+
+
       <div class="row">
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Ultima luna</p>
-                    <h5 class="font-weight-bolder mb-0">
-                      3200 RON
-                      <span class="text-success text-sm font-weight-bolder">+55%</span>
-                    </h5>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                    <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Ultimul an</p>
-                    <h5 class="font-weight-bolder mb-0">
-                      36000 RON
-                      <span class="text-success text-sm font-weight-bolder">+3%</span>
-                    </h5>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                    <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Tablouri pe stoc</p>
-                    <h5 class="font-weight-bolder mb-0">
-                      56
-                      <span class="text-danger text-sm font-weight-bolder">-2%</span>
-                    </h5>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                    <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Produse Handmade pe stoc</p>
-                    <h5 class="font-weight-bolder mb-0">
-                      352
-                      <span class="text-success text-sm font-weight-bolder">+5%</span>
-                    </h5>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                    <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="row mt-4">
-        <div class="col-lg-7 mb-lg-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="d-flex flex-column h-100">
-                    <p class="mb-1 pt-2 text-bold">Tabloul cu cele mai multe exemplare pe stoc</p>
-                    <h5 class="font-weight-bolder">Ai 6 pe stoc</h5>
-                    <p class="mb-5">Din acest tip de tablou ai pe stoc 6 exemplare</p>
-                   
-                  </div>
-                </div>
-                <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
-                  <div class="bg-gradient-primary border-radius-lg h-100">
-                    <img src="../assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
-                    <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                      <img class=" w-60 position-relative z-index-2 pt-4 "  src="../media/tablou_1.jpg" alt="tablou">
-                    <p> </p>
-                    </div>
-                    <p> </p><p> </p></br>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-5">
-          <div class="card h-100 p-3">
-            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/ivancik.jpg');">
-              <span class="mask bg-gradient-dark"></span>
-              <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
-                <h5 class="text-white font-weight-bolder mb-4 pt-2">Ultima comanda</h5>
-                <p class="text-white">Ultima ta comanda este : ----descrierea din tabelul de comenzi ---  </p>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="row mt-4">
-        <div class="col-lg-5 mb-lg-0 mb-4">
-          <div class="card z-index-2">
-            <div class="card-body p-3">
-              <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
-                <div class="chart">
-                  <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
-                </div>
-              </div>
-              <h6 class="ms-2 mt-4 mb-0"> Valoare vanzari ultimul an </h6>
-              <p class="text-sm ms-2"> (<span class="font-weight-bolder">+23%</span>) fata de anul precedent </p>
-              <div class="container border-radius-lg">
-                <div class="row"  >
-                  <div class="col-5 py-3 ps-0">
-                    <div class="d-flex mb-2">
-                      <p class="text-xs mt-1 mb-0 font-weight-bold">Tablouri</p>
-                    </div>
-                    <h4 class="font-weight-bolder">24000 RON</h4>
-                    <div class="progress w-75">
-                      <div class="progress-bar bg-dark w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  
-                  <div class="col-5 py-3 ps-0">
-                    <div class="d-flex mb-2">
-                      
-                      <p class="text-xs mt-1 mb-0 font-weight-bold">Produse handmade</p>
-                    </div>
-                    <h4 class="font-weight-bolder">12000 RON</h4>
-                    <div class="progress w-75">
-                      <div class="progress-bar bg-dark w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-lg-7">
-          <div class="card z-index-2">
+        <div class="col-12">
+          <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Analiza vanzarilor pe ultimele 9 luni</h6>
+              <h6>Projects table</h6>
             </div>
-            <div class="card-body p-3">
-              <div class="chart">
-                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center justify-content-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">id</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">nume</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">email</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">telfon</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">adresa</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">facebook</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                  <?php             
+                    $sql="SELECT * FROM clienti ";
+                    $result=mysqli_query($con,$sql);
+                    if($result){
+
+                        
+                        while($row=mysqli_fetch_assoc($result)){
+                            $id=$row['client_id'];
+                            $nume=$row['nume'];
+                            $email=$row['email'];
+                            $telefon=$row['telefon'];
+                            $oras=$row['oras'];
+                            $strada=$row['strada_nr'];
+                            $facebook=$row['facebook'];
+                    
+                            echo '
+                            <tr>
+                              <td>
+                                <div class="d-flex px-2">
+                                  <div>
+                                  <i class="fa fa-user me-2"></i>   
+                                  </div>
+                                  <div class="my-auto">
+                                    <h6 class="mb-0 text-sm">#'.$id.'</h6>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <p class="text-sm font-weight-bold mb-0">'.$nume.'</p>
+                              </td>
+                              <td>
+                                <span class="text-xs font-weight-bold">'.$email.'</span>
+                              </td>
+                              <td class="align-middle text-center">
+                                <div class="d-flex ">
+                                  <span class="me-2 text-xs font-weight-bold">'.$telefon.'</span>                                  
+                                </div>
+                              </td>
+                              <td class="align-middle text-center">
+                                <div class="d-flex ">
+                                  <span class="me-2 text-xs font-weight-bold">'.$oras.' '.$strada.'</span>                                  
+                                </div>
+                              </td>
+                              <td class="align-middle text-center">
+                                <div class="d-flex ">
+                                  <span class="me-2 text-xs font-weight-bold">'.$facebook.'</span>                                  
+                                </div>
+                              </td>
+                              <td class="align-middle">
+                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs mb-0" data-toggle="tooltip" data-original-title="Edit user">
+                                Edit
+                              </a>
+                              </td>
+                              
+                            </tr>';
+                        }
+                    }
+                            ?>
+
+                    <tr>
+                      <td colspan="7" class="align-middle text-center">
+                        <a href="adaugaclient.php" class="text-primary font-weight-bold text-xl  mb-0">
+                            <i class="fa fa-plus"></i></a>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <footer class="footer pt-3  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                Lucrare de licenta realizata de
+                <a href="" class="font-weight-bold" target="_blank">Sofica Radu</a>
+                in cadrul URA.
+              </div>
+            </div>           
+          </div>
+        </div>
 
-      
-      
+      </footer>
     </div>
   </main>
-
-   
+  
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
-  <script>
-    var ctx = document.getElementById("chart-bars").getContext("2d");
-
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: ["Ian", "Feb", "Mar", "Apr", "Mai", "Iun", "Iul", "Aug", "Sep", "Oct", "Noi", "Dec"],
-        datasets: [{
-          label: "Vanzari",
-          tension: 0.4,
-          borderWidth: 0,
-          borderRadius: 4,
-          borderSkipped: false,
-          backgroundColor: "#fff",
-          data: [120, 50, 300, 450, 200, 100, 220, 500, 100, 400, 230, 500],
-          maxBarThickness: 6
-        }, ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-            },
-            ticks: {
-              suggestedMin: 0,
-              suggestedMax: 500,
-              beginAtZero: true,
-              padding: 15,
-              font: {
-                size: 14,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-              color: "#fff"
-            },
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false
-            },
-            ticks: {
-              display: false
-            },
-          },
-        },
-      },
-    });
-
-
-    var ctx2 = document.getElementById("chart-line").getContext("2d");
-
-    var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
-    gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
-
-    var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
-    gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
-
-    new Chart(ctx2, {
-      type: "line",
-      data: {
-        labels: ["Apr", "Mai", "Iun", "Iul", "Aug", "Sep", "Oct", "Noi", "Dec"],
-        datasets: [{
-            label: "Tablouri",
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#cb0c9f",
-            borderWidth: 3,
-            backgroundColor: gradientStroke1,
-            fill: true,
-            data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-            maxBarThickness: 6
-
-          },
-          {
-            label: "Produse Handmade",
-            tension: 0.4,
-            borderWidth: 0,
-            pointRadius: 0,
-            borderColor: "#3A416F",
-            borderWidth: 3,
-            backgroundColor: gradientStroke2,
-            fill: true,
-            data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
-            maxBarThickness: 6
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#b2b9bf',
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#b2b9bf',
-              padding: 20,
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
-  </script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
