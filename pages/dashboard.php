@@ -675,7 +675,7 @@ include 'connect.php';
           borderRadius: 4,
           borderSkipped: false,
           backgroundColor: "#fff",
-          <?php?>
+          
           data: [120, 50, 300, 450, 200, 100, 220, 500, 100, 400, 230, 500],
           maxBarThickness: 6
         }, ],
