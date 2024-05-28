@@ -25,7 +25,7 @@ include 'connect.php';
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="../media/STAMPILA_mirela_sofica_art.png">
   <title>
     Soft UI Dashboard by Creative Tim
   </title>
@@ -42,13 +42,24 @@ include 'connect.php';
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  <style>
+     td:nth-child(4) {
+                width: 40%;
+            }
+
+
+  </style>
+
+
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
 
+    <img src="../media/STAMPILA_mirela_sofica_art.png" class="navbar-brand-img h-100 " alt="main_logo"></br>
       <span class="ms-1 font-weight-bold">Depozit de picturi electronic</span>
+</br>
      <!-- <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html " target="_blank">
         <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
@@ -60,7 +71,7 @@ include 'connect.php';
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link " href="../pages/dashboard.html">
+          <a class="nav-link " href="../pages/dashboard.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -182,6 +193,27 @@ include 'connect.php';
             <span class="nav-link-text ms-1">Distribuitori</span>
           </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link  " href="../pages/atelier.php">
+              <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>settings</title>
+                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                      <g transform="translate(1716.000000, 291.000000)">
+                        <g transform="translate(304.000000, 151.000000)">
+                          <polygon class="color-background opacity-6" points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667"></polygon>
+                          <path class="color-background opacity-6" d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z"></path>
+                          <path class="color-background" d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <span class="nav-link-text ms-1">Atelier</span>
+            </a>
+          </li>
       </ul>
     </div>
 
@@ -199,7 +231,7 @@ include 'connect.php';
           </div>
         </div>
       </div>
-      <a class="btn bg-gradient-primary mt-3 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree">Adauga tablou</a>
+      <a class="btn bg-gradient-primary mt-3 w-100" href="adaugatablou.php">Adauga tablou</a>
     </div>
   </aside>
 
@@ -247,84 +279,64 @@ include 'connect.php';
             </div>
             <div class="card-body p-3">
               <div class="row">
-                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                  <div class="card card-blog card-plain">
-                    <div class="position-relative">
-                      <a class="d-block shadow-xl border-radius-xl">
-                        <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                      </a>
-                    </div>
-                    <div class="card-body px-1 pb-0">
-                      <p class="text-gradient text-dark mb-2 text-sm">Project #2</p>
-                      <a href="javascript:;">
-                        <h5>
-                          Modern
-                        </h5>
-                      </a>
-                      <p class="mb-4 text-sm">
-                        As Uber works through a huge amount of internal management turmoil.
-                      </p>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Project</button>
-                        
-                      </div>
-                    </div>
+              <?php
+
+                                
+$sqlult3="SELECT * FROM tablouri ORDER BY id_tablou DESC LIMIT 3";
+$result=mysqli_query($con,$sqlult3);
+if($result){
+
+    
+    while($row=mysqli_fetch_assoc($result)){
+        $id=$row['id_tablou'];
+        $nume=$row['titlu'];
+        $tehnica=$row['tehnica'];
+        $sezon=$row['sezon'];
+        $pret=$row['pret'];
+        $stoc=$row['stoc'];
+        $poza=$row['poza'];
+
+
+            echo '
+            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+              <div class="card card-blog card-plain">
+                <div class="position-relative">
+                  <a class="d-block shadow-xl border-radius-xl">
+                    <img src="../media/poze_tablouri/'.$poza.'" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                  </a>
+                </div>
+                <div class="card-body px-1 pb-0">
+                  <p class="text-gradient text-dark mb-2 text-sm">Produsul #'.$id.'</p>
+                  <a href="javascript:;">
+                    <h5>
+                      '.$nume.'
+                    </h5>
+                  </a>
+                  <p class="mb-4 text-sm">
+                    Pentru sezonul de '.$sezon.'</br>
+                    Mai ai pe stoc : '.$stoc.' bucati
+                  </p>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <a class="d-flex align-items-center justify-content-between" href="vizprodus.php?id='.$id.'">
+                    <button type="submit"  class="btn btn-outline-primary btn-sm mb-0">Vizualizeaza Produs</button>
+                    </a>
                   </div>
                 </div>
-                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                  <div class="card card-blog card-plain">
-                    <div class="position-relative">
-                      <a class="d-block shadow-xl border-radius-xl">
-                        <img src="../assets/img/home-decor-2.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
-                      </a>
-                    </div>
-                    <div class="card-body px-1 pb-0">
-                      <p class="text-gradient text-dark mb-2 text-sm">Project #1</p>
-                      <a href="javascript:;">
-                        <h5>
-                          Scandinavian
-                        </h5>
-                      </a>
-                      <p class="mb-4 text-sm">
-                        Music is something that every person has his or her own specific opinion about.
-                      </p>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Project</button>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                  <div class="card card-blog card-plain">
-                    <div class="position-relative">
-                      <a class="d-block shadow-xl border-radius-xl">
-                        <img src="../media/tablou_1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                      </a>
-                    </div>
-                    <div class="card-body px-1 pb-0">
-                      <p class="text-gradient text-dark mb-2 text-sm">Project #3</p>
-                      <a href="javascript:;">
-                        <h5>
-                          Minimalist
-                        </h5>
-                      </a>
-                      <p class="mb-4 text-sm">
-                        Different people have different taste, and various types of music.
-                      </p>
-                      <div class="d-flex align-items-center justify-content-between">
-                        <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Project</button>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </div>
+            </div>';   
+    }
+}
+   
+?>
+                
+                
+                
                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                   <div class="card h-100 card-plain border bg-gradient-primary ">
                     <div class="card-body d-flex flex-column justify-content-center text-center">
                       <a href="javascript:;">
                         <i class="fa fa-plus text-secondary mb-3"></i>
-                        <h5 class=" text-secondary"> Tablou nou </h5>
+                        <h5 class=" text-secondary" href="adaugatablou.php"> Tablou nou </h5>
                       </a>
                     </div>
                   </div>
@@ -343,7 +355,11 @@ include 'connect.php';
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
-                  <thead>
+                  <col style="width: 10%;" />
+ 
+                   <col style="width: 10%;" />
+ 
+                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Titlu si tehnica</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tema si subiect</th>
@@ -358,64 +374,7 @@ include 'connect.php';
 
                     
 
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">John Michael</h6>
-                            <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">Manager</p>
-                        <p class="text-xs text-secondary mb-0">Organization</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Online</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                        </a>
-                      </td>
-                    </tr>
 
-
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3" alt="user2">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Alexa Liras</h6>
-                            <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">Programator</p>
-                        <p class="text-xs text-secondary mb-0">Developer</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">11/01/19</span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                        </a>
-                      </td>
-                    </tr>
 
                     
                   
@@ -442,7 +401,7 @@ include 'connect.php';
           <td>
             <div class="d-flex px-2 py-1">
               <div>
-                <img src="../media/tablou_1.jpg" class="avatar avatar-sm me-3" alt="user1">
+                <img src="../media/poze_tablouri/'.$poza.'" class="avatar avatar-sm me-3" alt="user1">
               </div>
               <div class="d-flex flex-column justify-content-center">
                 <h6 class="mb-0 text-sm">'.$titlu.'</h6>
@@ -455,10 +414,24 @@ include 'connect.php';
             <p class="text-xs text-secondary mb-0">'.$subiect.'</p>
           </td>
           <td class="align-middle text-center text-sm">
-            <span class="badge badge-sm bg-gradient-success">'.$sezon.'</span>
+          ';
+          if($sezon == "primavara"){
+            echo'            <span class="badge badge-sm bg-gradient-success">'.$sezon.'</span>';
+            }
+          if($sezon == "vara"){
+                echo'            <span class="badge badge-sm bg-gradient-danger">'.$sezon.'</span>';
+                }
+          if($sezon == "toamna"){
+                    echo'            <span class="badge badge-sm bg-gradient-secondary">'.$sezon.'</span>';
+                    }
+          if($sezon == "iarna"){
+                        echo'            <span class="badge badge-sm bg-gradient-info">'.$sezon.'</span>';
+                        }
+          
+          echo '
           </td>
-          <td class="align-middle text-center">
-            <span class="text-secondary text-xs font-weight-bold">'.$descriere.'</span>
+          <td class="align-middle text-center " >
+            <span class="text-secondary text-xs font-weight-bold" >'.$descriere.'</span>
           </td>
           <td class="align-middle text-center">
             <span class="text-secondary text-xs font-weight-bold">'.$stoc.'</span>

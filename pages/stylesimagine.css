@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.editor-container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+.image-selection {
+    margin: 20px 0;
+}
+
+.image-container {
+    margin: 20px 0;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.frame-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Frame Styles */
+.frame1 {
+    border: 20px solid #000;
+    background-image: url('black-wood-texture.jpg');
+    background-size: cover;
+}
+
+.frame2 {
+    border: 10px solid #4CAF50; /* Green frame */
+}
+
+.frame3 {
+    border: 10px solid #FF4500; /* Orange frame */
+}

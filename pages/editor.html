@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image Editor with Frames</title>
+    <link rel="stylesheet" href="stylesimagine.css">
+</head>
+<body>
+    <div class="editor-container">
+        <h1>Simple Image Editor with Frames</h1>
+        <div class="image-selection">
+            <label for="imageSelect">Choose an image:</label>
+            <select id="imageSelect">
+                <option value="">Select an image</option>
+            </select>
+        </div>
+        <div class="image-container">
+            <img id="image" src="" alt="Editable Image" style="display: none;">
+        </div>
+        <div class="frame-controls">
+            <button class="frame-btn" data-frame="none">No Frame</button>
+            <button class="frame-btn" data-frame="frame1">Frame 1</button>
+            <button class="frame-btn" data-frame="frame2">Frame 2</button>
+            <button class="frame-btn" data-frame="frame3">Frame 3</button>
+        </div>
+    </div>
+    <script src="scriptimagine.js"></script>
+</body>
+</html>
