@@ -1,3 +1,9 @@
+<?php
+include 'connect.php';
+?>
+
+
+
 <!--
 =========================================================
 * Soft UI Dashboard - v1.0.7
@@ -188,7 +194,7 @@
           <div class="docs-info">
             <h6 class="text-white up mb-0">Ai primit o comanda noua?</h6>
             <p class="text-xs font-weight-bold">daca ai primit o comanda noua inregistreaz-o aici</p>
-            <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Comanda noua</a>
+            <a href="adaugacomanda.php" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Comanda noua</a>
           </div>
         </div>
       </div>
@@ -241,16 +247,45 @@
                   <span class="mask bg-gradient-dark"></span>
                   <div class="card-body position-relative z-index-1 p-3">
                     <i class="fas  text-white p-2"></i>
-                    <h5 class="text-white mt-4 mb-5 pb-2">Nume produs</h5>
+                    <h5 class="text-white mt-4 mb-5 pb-2"><?php if (isset($_GET['id'])) {
+  $id = intval($_GET['id']);
+} else {
+  die("ID-ul produsului nu a fost specificat.");
+}
+
+$sql="SELECT * FROM produse WHERE cod_produs = $id ";
+  $result=mysqli_query($con,$sql);
+  if($result){    
+    $row=mysqli_fetch_assoc($result);              
+        $nume=$row['nume'];
+        $sezon=$row['sezon'];
+        $pret=$row['pret'];
+        $stoc=$row['stoc'];
+        $poza=$row['poza'];
+    
+      }
+    else echo'prost';
+    
+    echo $nume;
+    ?></h5>
                     <div class="d-flex">
                       <div class="d-flex">
                         <div class="me-4">
                           <p class="text-white text-sm opacity-8 mb-0">Pret</p>
-                          <h6 class="text-white mb-0">2222 RON</h6>
+                          <h6 class="text-white mb-0">
+                            
+<?php
+
+
+    echo $pret;
+?>
+
+
+                           RON</h6>
                         </div>
                         <div>
                           <p class="text-white text-sm opacity-8 mb-0">Stoc</p>
-                          <h6 class="text-white mb-0">80</h6>
+                          <h6 class="text-white mb-0"><?php echo $stoc;?></h6>
                         </div>
                       </div>
                     </div>

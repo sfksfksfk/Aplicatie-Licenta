@@ -279,6 +279,7 @@ include 'connect.php';
             </div>
             <div class="card-body p-3">
               <div class="row">
+              
               <?php
 
                                 
@@ -301,13 +302,13 @@ if($result){
             <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
               <div class="card card-blog card-plain">
                 <div class="position-relative">
-                  <a class="d-block shadow-xl border-radius-xl">
+                  <a href = "viztablou.php?id='.$id.'" class="d-block shadow-xl border-radius-xl">
                     <img src="../media/poze_tablouri/'.$poza.'" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                   </a>
                 </div>
                 <div class="card-body px-1 pb-0">
-                  <p class="text-gradient text-dark mb-2 text-sm">Produsul #'.$id.'</p>
-                  <a href="javascript:;">
+                  <p class="text-gradient text-dark mb-2 text-sm">Tabloul #'.$id.'</p>
+                  <a href="vizprodus.php?id='.$id.'">
                     <h5>
                       '.$nume.'
                     </h5>
@@ -317,8 +318,8 @@ if($result){
                     Mai ai pe stoc : '.$stoc.' bucati
                   </p>
                   <div class="d-flex align-items-center justify-content-between">
-                    <a class="d-flex align-items-center justify-content-between" href="vizprodus.php?id='.$id.'">
-                    <button type="submit"  class="btn btn-outline-primary btn-sm mb-0">Vizualizeaza Produs</button>
+                    <a class="d-flex align-items-center justify-content-between" href="viztablou.php?id='.$id.'">
+                    <button type="submit"  class="btn btn-outline-primary btn-sm mb-0">Vizualizeaza Tablou</button>
                     </a>
                   </div>
                 </div>
@@ -334,7 +335,7 @@ if($result){
                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                   <div class="card h-100 card-plain border bg-gradient-primary ">
                     <div class="card-body d-flex flex-column justify-content-center text-center">
-                      <a href="javascript:;">
+                      <a href="adaugatablou.php">
                         <i class="fa fa-plus text-secondary mb-3"></i>
                         <h5 class=" text-secondary" href="adaugatablou.php"> Tablou nou </h5>
                       </a>
@@ -482,22 +483,7 @@ if($result){
                 for a better web.
               </div>
             </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
+            
           </div>
         </div>
       </footer>

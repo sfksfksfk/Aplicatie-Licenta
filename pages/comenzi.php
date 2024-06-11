@@ -27,7 +27,7 @@ include 'connect.php';
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
-    Clienti
+    Comenzi
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -75,7 +75,7 @@ include 'connect.php';
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Pagina principala</span>
+            <span class="nav-link-text ms-1">Pagina comenzi</span>
           </a>
         </li>
         <li class="nav-item">
@@ -273,7 +273,7 @@ include 'connect.php';
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Projects table</h6>
+              <h6>Comenzile tale</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -281,36 +281,42 @@ include 'connect.php';
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">id</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">nume</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">email</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">telfon</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">adresa</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">facebook</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">data expedierii</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">continut</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">valoare</th>
                     </tr>
                   </thead>
                   <tbody>
+                  <tr>
+                      <td colspan="7" class="align-middle text-center">
+                        <a href="adaugacomanda.php" class="text-primary font-weight-bold text-xl  mb-0">
+                            <i class="fa fa-plus"></i> Adauga o comanda noua</a>
+                      </td>
+                    </tr>
+
+
 
                   <?php             
-                    $sql="SELECT * FROM clienti ";
+                    $sql="SELECT * FROM comenzi ";
                     $result=mysqli_query($con,$sql);
                     if($result){
 
                         
                         while($row=mysqli_fetch_assoc($result)){
-                            $id=$row['client_id'];
-                            $nume=$row['nume'];
-                            $email=$row['email'];
-                            $telefon=$row['telefon'];
+                            $id=$row['idcomanda'];
+                            $valoare=$row['valoare'];
+                            $dataex=$row['data_ex'];
                             $oras=$row['oras'];
-                            $strada=$row['strada_nr'];
-                            $facebook=$row['facebook'];
+                            $strada=$row['stradanr'];
+                            $idcon=$row['id_continut'];
                     
                             echo '
                             <tr>
                               <td>
                                 <div class="d-flex px-2">
                                   <div>
-                                  <i class="fa fa-user me-2"></i>   
+                                  <i class="fa fa-archive me-2"></i>   
                                   </div>
                                   <div class="my-auto">
                                     <h6 class="mb-0 text-sm">#'.$id.'</h6>
@@ -318,26 +324,22 @@ include 'connect.php';
                                 </div>
                               </td>
                               <td>
-                                <p class="text-sm font-weight-bold mb-0">'.$nume.'</p>
+                                <p class="text-sm font-weight-bold mb-0">'.$oras.' '.$strada.'</p>
                               </td>
                               <td>
-                                <span class="text-xs font-weight-bold">'.$email.'</span>
+                                <span class="text-xs font-weight-bold">'.$dataex.'</span>
                               </td>
                               <td class="align-middle text-center">
                                 <div class="d-flex ">
-                                  <span class="me-2 text-xs font-weight-bold">'.$telefon.'</span>                                  
+                                  <span class="me-2 text-xs font-weight-bold">'.$idcon.'</span>                                  
                                 </div>
                               </td>
                               <td class="align-middle text-center">
                                 <div class="d-flex ">
-                                  <span class="me-2 text-xs font-weight-bold">'.$oras.' '.$strada.'</span>                                  
+                                  <span class="me-2 text-xs font-weight-bold">'.$valoare.' RON</span>                                  
                                 </div>
                               </td>
-                              <td class="align-middle text-center">
-                                <div class="d-flex ">
-                                  <span class="me-2 text-xs font-weight-bold">'.$facebook.'</span>                                  
-                                </div>
-                              </td>
+                              
                               <td class="align-middle">
                                 <a href="javascript:;" class="text-secondary font-weight-bold text-xs mb-0" data-toggle="tooltip" data-original-title="Edit user">
                                 Edit
@@ -349,12 +351,7 @@ include 'connect.php';
                     }
                             ?>
 
-                    <tr>
-                      <td colspan="7" class="align-middle text-center">
-                        <a href="adaugaclient.php" class="text-primary font-weight-bold text-xl  mb-0">
-                            <i class="fa fa-plus"></i></a>
-                      </td>
-                    </tr>
+                    
 
                   </tbody>
                 </table>

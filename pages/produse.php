@@ -291,7 +291,7 @@ include 'connect.php';
                                 <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
                                   <div class="card card-blog card-plain">
                                     <div class="position-relative">
-                                      <a class="d-block shadow-xl border-radius-xl">
+                                      <a href = "vizprodus.php?id='.$id.'"class="d-block shadow-xl border-radius-xl">
                                         <img src="../media/poze_produse/'.$poza.'" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
                                       </a>
                                     </div>
