@@ -24,8 +24,8 @@ include 'connect.php';
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
     Soft UI Dashboard by Creative Tim
   </title>
@@ -376,6 +376,49 @@ $sql="SELECT * FROM produse WHERE cod_produs = $id ";
             </div>
             <div class="card-body p-3 pb-0">
               <ul class="list-group " style="overflow: auto; height:340px;">
+                  <?php
+                  
+                  $sql="SELECT 
+                                o.idcomanda,
+                                o.data_ex,
+                                o.valoare
+                            FROM 
+                                comenzi o
+                            JOIN 
+                                continut oc ON o.idcomanda = oc.id_comanda
+                            LEFT JOIN 
+                                tablouri p1 ON oc.tip = 'tablou' AND oc.id_produs = p1.id_tablou
+                            LEFT JOIN 
+                                produse p2 ON oc.tip = 'handmade' AND oc.id_produs = p2.cod_produs
+                            WHERE 
+                                oc.id_produs = $id
+                                AND oc.tip = 'handmade' ORDER BY o.data_ex DESC;";
+
+                    $result=mysqli_query($con,$sql);
+                    if($result){     
+                      while($row=mysqli_fetch_assoc($result)){             
+                          $idcomanda=$row['idcomanda'];
+                          $data=$row['data_ex'];
+                          $valoare=$row['valoare'];
+                          echo '
+                            
+                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                  <div class="d-flex flex-column">
+                                    <h6 class="mb-1 text-dark font-weight-bold text-sm">'.date('d/M/Y', $data).'</h6>
+                                    <span class="text-xs">#comada-'.$idcomanda.'</span>
+                                  </div>
+                                  <div class="d-flex align-items-center text-sm">
+                                    '.$valoare.' RON
+                                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
+                                  </div>
+                                </li>
+
+                          ';
+                          
+                        }
+                      }
+                  ?>
+
                 <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                   <div class="d-flex flex-column">
                     <h6 class="mb-1 text-dark font-weight-bold text-sm">March, 01, 2020</h6>

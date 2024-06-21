@@ -24,8 +24,8 @@ include 'connect.php';
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../media/STAMPILA_mirela_sofica_art.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
     Soft UI Dashboard by Creative Tim
   </title>
@@ -56,9 +56,20 @@ include 'connect.php';
 <body class="g-sidenav-show bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
+    <div class="row">
+      
+    <div class="col-xl-1 col-md-6 mb-xl-0 mb-4"></div>
 
-    <img src="../media/STAMPILA_mirela_sofica_art.png" class="navbar-brand-img h-100 " alt="main_logo"></br>
-      <span class="ms-1 font-weight-bold">Depozit de picturi electronic</span>
+    <div class="col-xl-4 col-md-6 mb-xl-0 mb-4">
+
+    <img src="../media/STAMPILA_mirela_sofica_art.png" class="" height="70px" alt="main_logo"></br>
+  </div>
+  <div class="col-xl-6 col-md-6 mb-xl-0 mb-4">
+
+  <span class="ms-1 font-weight-bold">Depozit de picturi electronic</span>
+</div>
+
+</div>
 </br>
      <!-- <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html " target="_blank">
@@ -266,24 +277,23 @@ include 'connect.php';
 
 
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-0">
       <div class="row" >
         <div id="mainFrameOne">
-        <div class="col-12 mt-4" id="mainFrameOne">
+        <div class="col-12 mt-0" id="mainFrameOne">
           
           <div class="card mb-4">
             
             <div class="card-header pb-0 p-3">
-              <h6 class="mb-1">Ultimele 3 tablouri</h6>
-              <p class="text-sm">Acestea sunt ultimele 3 tablouri realizate de tine</p>
+              <h6 class="mb-1">Ultimele 4 tablouri incarcate</h6>
             </div>
-            <div class="card-body p-3">
-              <div class="row">
+            <div class="card-body p-3 justify-content-center">
+              <div class="row justify-content-center">
               
               <?php
 
                                 
-$sqlult3="SELECT * FROM tablouri ORDER BY id_tablou DESC LIMIT 3";
+$sqlult3="SELECT * FROM tablouri ORDER BY id_tablou DESC LIMIT 4";
 $result=mysqli_query($con,$sqlult3);
 if($result){
 
@@ -297,34 +307,33 @@ if($result){
         $stoc=$row['stoc'];
         $poza=$row['poza'];
 
-
+        
             echo '
-            <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+            <div class="col-xl-2 col-md-10 mb-xl-5 mb-10">
               <div class="card card-blog card-plain">
                 <div class="position-relative">
                   <a href = "viztablou.php?id='.$id.'" class="d-block shadow-xl border-radius-xl">
-                    <img src="../media/poze_tablouri/'.$poza.'" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                    <img src="../media/poze_tablouri/'.$poza.'" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl" height="400">
                   </a>
                 </div>
-                <div class="card-body px-1 pb-0">
-                  <p class="text-gradient text-dark mb-2 text-sm">Tabloul #'.$id.'</p>
+                <div class="card-body px-0  pb-0">
+                  <p class="text-gradient text-dark mb-2 text-sm"><small>Tabloul #'.$id.'</small></p>
                   <a href="vizprodus.php?id='.$id.'">
-                    <h5>
+                    <h6>
                       '.$nume.'
-                    </h5>
+                    </h6>
                   </a>
                   <p class="mb-4 text-sm">
-                    Pentru sezonul de '.$sezon.'</br>
+                    Sezon : '.$sezon.'</br>
                     Mai ai pe stoc : '.$stoc.' bucati
                   </p>
-                  <div class="d-flex align-items-center justify-content-between">
                     <a class="d-flex align-items-center justify-content-between" href="viztablou.php?id='.$id.'">
-                    <button type="submit"  class="btn btn-outline-primary btn-sm mb-0">Vizualizeaza Tablou</button>
+                    <p  class="btn btn-outline-primary btn-sm mb-0">Vizualizeaza Tablou</p>
                     </a>
-                  </div>
                 </div>
               </div>
-            </div>';   
+            </div>
+            ';
     }
 }
    
@@ -336,8 +345,8 @@ if($result){
                   <div class="card h-100 card-plain border bg-gradient-primary ">
                     <div class="card-body d-flex flex-column justify-content-center text-center">
                       <a href="adaugatablou.php">
-                        <i class="fa fa-plus text-secondary mb-3"></i>
-                        <h5 class=" text-secondary" href="adaugatablou.php"> Tablou nou </h5>
+                        <i class="fa fa-plus text-white mb-3"></i>
+                        <h5 class=" text-white" href="adaugatablou.php"> Tablou nou </h5>
                       </a>
                     </div>
                   </div>

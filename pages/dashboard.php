@@ -23,8 +23,8 @@ include 'connect.php';
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
     Depozit de picturi electronic
   </title>
@@ -57,6 +57,7 @@ include 'connect.php';
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
+        
         <li class="nav-item">
           <a class="nav-link  active" href="../pages/dashboard.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -181,6 +182,26 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link  " href="../pages/distribuitori.php">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>document</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g transform="translate(154.000000, 300.000000)">
+                        <path class="color-background opacity-6" d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z"></path>
+                        <path class="color-background" d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z"></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="nav-link-text ms-1">Vanzari distribuitori</span>
+          </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link  " href="../pages/atelier.php">
               <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -207,18 +228,13 @@ include 'connect.php';
 
 
     <div class="sidenav-footer mx-3 ">
-      <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-        <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpg')"></div>
-        <div class="card-body text-start p-3 w-100">
-       
-          <div class="docs-info">
-            <h6 class="text-white up mb-0">Ai primit o comanda noua?</h6>
-            <p class="text-xs font-weight-bold">daca ai primit o comanda noua inregistreaz-o aici</p>
-            <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Comanda noua</a>
-          </div>
-        </div>
-      </div>
-      <a class="btn bg-gradient-primary mt-3 w-100" href="adaugatablou.php">Adauga tablou</a>
+        
+         
+            <a class="btn bg-gradient-success mt-0 w-100" href="adaugatablou.php">Comanda Noua</a>
+            <a class="btn bg-gradient-success mt-0 w-100" href="adaugatablou.php">Vanzare noua</a>
+            <a class="btn bg-gradient-primary mt-0 w-100" href="adaugatablou.php">Adauga tablou</a>
+            <a class="btn bg-gradient-primary mt-0 w-100" href="adaugatablou.php">Adauga produs handmade</a>
+
     </div>
   </aside>
 
@@ -271,7 +287,7 @@ include 'connect.php';
           <div class="card">
             <div class="card-body p-3">
               <div class="row">
-                <div class="col-8">
+                <div class="col-9">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Vanzari luna curenta</p>
                     <?php
@@ -279,10 +295,10 @@ include 'connect.php';
                     AND YEAR(data_ex) = YEAR(CURRENT_DATE())";
                     $result=mysqli_query($con,$sql);
                     if($result){
-                     
                       $row=mysqli_fetch_assoc($result);
                       $suma=$row['total_vanzari'];
-                      echo '<h5 class="font-weight-bolder mb-0">'.$suma.' RON</h5>';
+                      
+                      echo '<h7 class="font-weight-bolder mb-0">'.$suma.' RON</h7>';
                     
                     }
 
@@ -323,10 +339,24 @@ include 'connect.php';
                     
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Vanzari luna trecuta</p>
                     
+                    <?php 
+                                        $sql="SELECT SUM(valoare) AS total_vanzari  FROM comenzi WHERE MONTH(data_ex) = MONTH(CURRENT_DATE())-1
+                                        AND YEAR(data_ex) = YEAR(CURRENT_DATE())";
+                                        $result=mysqli_query($con,$sql);
+                                        if($result){
+                                          $row=mysqli_fetch_assoc($result);
+                                          $suma=$row['total_vanzari'];
+                                          
+                                          echo '<h7 class="font-weight-bolder mb-0">'.$suma.' RON</h7>';
+                                        
+                                        }
+                    
+                    
+                    ?>
                     
                   </div>
                 </div>
-                <div class="col-4 text-end">
+                <div class="col-3 text-end">
                   <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
                     <i class="ni ni-basket text-lg opacity-10" aria-hidden="true"></i>
                   </div>
@@ -350,7 +380,7 @@ include 'connect.php';
                      
                       $row=mysqli_fetch_assoc($result);
                       $suma=$row['total_vanzari'];
-                      echo '<h5 class="font-weight-bolder mb-0">'.$suma.' RON</h5>';
+                      echo '<h7 class="font-weight-bolder mb-0">'.$suma.' RON</h7>';
                     
                     }
                     $sql2="SELECT SUM(valoare) AS total_vanzari2  FROM comenzi WHERE YEAR(data_ex) = YEAR(CURRENT_DATE() - INTERVAL 1 YEAR)";
@@ -384,7 +414,18 @@ include 'connect.php';
                     }
                     ?>
                       <p class="text-sm mb-0 text-capitalize font-weight-bold">Vanzari anul trecut</p>
+                    <?php
+                    $sql="SELECT SUM(valoare) AS total_vanzari  FROM comenzi WHERE YEAR(data_ex) = YEAR(CURRENT_DATE())-1";
+                    $result=mysqli_query($con,$sql);
+
+                    if($result){
+                     
+                      $row=mysqli_fetch_assoc($result);
+                      $suma=$row['total_vanzari'];
+                      echo '<h7 class="font-weight-bolder mb-0">'.$suma.' RON</h7>';
                     
+                    }
+                    ?>
                     
                   </div>
                 </div>
@@ -411,7 +452,7 @@ include 'connect.php';
                      
                       $row=mysqli_fetch_assoc($result);
                       $stoc=$row['total'];
-                      echo '<h5 class="font-weight-bolder mb-0">'.$stoc.'</h5>';
+                      echo '<h7 class="font-weight-bolder mb-0">'.$stoc.'</h7>';
                     
                     }
 
@@ -425,6 +466,43 @@ include 'connect.php';
                     <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
                   </div>
                 </div>
+                <div class="col-9">
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">Din care</p>
+                <p class="text-sm mb-0  font-weight-bold">
+
+                      <?php
+                        $sql="SELECT SUM(stoc) AS total FROM tablouri WHERE tehnica='ulei';";
+                        $result=mysqli_query($con,$sql);
+                        if($result){
+                         
+                          $row=mysqli_fetch_assoc($result);
+                          $stoc=$row['total'];
+                          echo $stoc;
+                        
+                        }
+                      
+                      ?>
+
+                    in ulei | 
+
+
+                      <?php
+                        $sql="SELECT SUM(stoc) AS total FROM tablouri WHERE tehnica='acuarela';";
+                        $result=mysqli_query($con,$sql);
+                        if($result){
+                         
+                          $row=mysqli_fetch_assoc($result);
+                          $stoc=$row['total'];
+                          echo '</h7>'.$stoc.'</h7>';
+                        
+                        }
+                      
+                      ?>
+
+                    in acuarela</p>
+                    
+                </div>
+                    
               </div>
             </div>
           </div>
@@ -435,7 +513,7 @@ include 'connect.php';
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Produse Handmade pe stoc</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Handmade pe stoc</p>
                     <?php
                     $sql="SELECT SUM(stoc) AS total FROM produse;";
                     $result=mysqli_query($con,$sql);
@@ -443,7 +521,7 @@ include 'connect.php';
                      
                       $row=mysqli_fetch_assoc($result);
                       $stoc=$row['total'];
-                      echo '<h5 class="font-weight-bolder mb-0">'.$stoc.'</h5>';
+                      echo '<h7 class="font-weight-bolder mb-0">'.$stoc.'</h7>';
                     
                     }
 
@@ -455,6 +533,25 @@ include 'connect.php';
                     <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
                   </div>
                 </div>
+                    <div class="col-9">
+                    <?php
+                    $sql="SELECT sezon, SUM(stoc) AS total_stoc FROM produse GROUP BY sezon ORDER BY total_stoc DESC LIMIT 1";
+                    $result=mysqli_query($con,$sql);
+                    if($result){
+                     
+                      $row=mysqli_fetch_assoc($result);
+                      $sezon=$row['sezon'];
+                      $stoc=$row['total_stoc'];
+                      
+                    }
+                    
+                    ?>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">majoritatea de <?php echo $sezon;?>, cu <?php echo $stoc;?> bucati pe stoc</p>
+                   
+
+                  
+                  </div>
+
               </div>
             </div>
           </div>
@@ -470,7 +567,7 @@ include 'connect.php';
                 <div class="col-lg-6 ">
                   <div class="d-flex flex-column h-100">
                     
-                   <h5 class="font-weight-bolder">Tabloul cu cele mai multe exemplare pe stoc</h5>
+                   <h6 class="font-weight-bolder">Tabloul cu cele mai multe exemplare pe stoc</h6>
                     <?php
                     $sql="SELECT * FROM tablouri ORDER BY stoc DESC, id_tablou DESC LIMIT 0, 1";
                     $result=mysqli_query($con,$sql);
@@ -481,8 +578,8 @@ include 'connect.php';
                       $stoc=$row['stoc'];
                       $nume=$row['titlu'];
 
-                      echo '<p class="mb-1 pt-2 text-bold">Din acest tip de tablou ai pe stoc '.$stoc.' exemplare </p>';
-                      echo '<p class="mb-5">Tabloul : '.$nume.'</p>';
+                      echo '<p class="mb-0 pt-2 text-bold">Ai pe stoc '.$stoc.' exemplare </p>';
+                      echo '<p class="mb-0">Tabloul : '.$nume.'</p>';
                     }
 
                     ?>
@@ -492,7 +589,7 @@ include 'connect.php';
                 </div>
 
                 <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
-                  <div class="bg-gradient-primary border-radius-lg h-100">
+                  <div class="bg-gradient-primary border-radius-lg h-10">
                     <img src="../assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
                     <div class="position-relative d-flex align-items-center justify-content-center h-100">
                     <?php
@@ -505,14 +602,14 @@ include 'connect.php';
                       $poza=$row['poza'];
                       $nume=$row['titlu'];
                       echo '
-                      <img class=" w-60 position-relative z-index-2 pt-4 "  src="../media/poze_tablouri/'.$poza.'" alt="tablou">';
+                      <img class="  position-relative z-index-2 pt-4 " height="150px" src="../media/poze_tablouri/'.$poza.'" alt="tablou">';
                     }
 
                     ?>
                     
                     <p> </p>
                     </div>
-                    <p> </p><p> </p></br>
+                    </br>
                   </div>
                 </div>
               </div>
@@ -522,8 +619,7 @@ include 'connect.php';
 
         <div class="col-lg-6">
           
-          <div class="card h-100 p-3">
-            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/ivancik.jpg');">
+            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/paint_brush_bg2.jpg');">
               <span class="mask bg-gradient-dark"></span>
                 <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
                   <div class="row">
@@ -534,7 +630,7 @@ include 'connect.php';
                   -->
                   <div class="col-lg-6 ">
                     <div class="d-flex flex-column h-100">
-                          <h5 class="text-white font-weight-bolder mb-4 pt-2">Produsul handmade cu stocul cel mai mare</h5>
+                          <h6 class="text-white font-weight-bolder mb-0 pt-2">Produsul handmade cu stocul cel mai mare</h6>
                           <?php
                     $sql="SELECT * FROM produse ORDER BY stoc DESC, cod_produs DESC LIMIT 0, 1";
                     $result=mysqli_query($con,$sql);
@@ -545,7 +641,7 @@ include 'connect.php';
                       $stoc=$row['stoc'];
                       $nume=$row['nume'];
 
-                      echo '<p class="text-white mb-1 pt-2 text-bold">Produsul este '.$nume.' si ai '.$stoc.' exemplare </p>';
+                      echo '<p class="text-white mb-0 pt-2 text-"><small>Produsul: '.$nume.' </br> stoc: '.$stoc.'</small></p>';
                     }
 
                     ?>
@@ -556,9 +652,9 @@ include 'connect.php';
 
 
 
-                  <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
-                    <div class="bg-gradient-info border-radius-lg h-100">
-                        <div class="position-relative d-flex align-items-center justify-content-center h-100">
+                  <div class="col-lg-5 ms-auto text-center mt-0 mt-lg-0">
+                    <div class="bg-gradient-info border-radius-lg h-80">
+                        <div class="position-relative d-flex align-items-center justify-content-center h-80">
                                   <?php
                               $sql="SELECT * FROM produse ORDER BY stoc DESC, cod_produs DESC LIMIT 0, 1";
                               $result=mysqli_query($con,$sql);
@@ -569,21 +665,19 @@ include 'connect.php';
                                 $poza=$row['poza'];
                                 $nume=$row['nume'];
                                 echo '
-                                <img class=" w-60 position-relative z-index-2 pt-4 "  style="border-radius:1%;" src="../media/poze_produse/'.$poza.'" alt="produs handmade">';
+                                <img class=" position-relative z-index-2 pt-4 " height="150px" style="border-radius:1%;" src="../media/poze_produse/'.$poza.'" alt="produs handmade">';
                               }
 
                               ?>
                     
-                          <p> </p>
                         </div>
-                          <p> </p><p> </p></br>
+                            </br>
                      </div>
                   </div>
                   </div>
                 </div>
               
               
-            </div>
           </div>
         </div>
       </div>
@@ -606,12 +700,63 @@ include 'connect.php';
         </div>
       </div>
 
+<?php
 
-      
+
+                $months = array(
+                  'January',
+                  'February',
+                  'March',
+                  'April',
+                  'May',
+                  'June',
+                  'July',
+                  'August',
+                  'September',
+                  'October',
+                  'November',
+                  'December'
+                  );
+
+                            $monthsUpToCurrent = array_slice($months, 0, date('n'));
+
+                            // Print the array to check the result
+                                                    
+
+                        for($x = 1 ; $x<=date('n') ; $x++)
+                                      {
+                                          $sql="SELECT SUM(valoare) as amount
+                              FROM comenzi WHERE YEAR(data_ex) = YEAR(CURRENT_DATE()) AND tip_produs='tablou' AND MONTH(data_ex)=$x";
+                                      $result=mysqli_query($con,$sql);
+                                      foreach($result as $data2)
+                                      {
+                                        $amount1[] = $data2['amount'] !== null ? $data2['amount'] : 0;                                      
+                                      }                                                          
+                                    }
+
+                                    for($x = 1 ; $x<=date('n') ; $x++)
+                                      {
+                                          $sql="SELECT SUM(valoare) as amount
+                              FROM comenzi WHERE YEAR(data_ex) = YEAR(CURRENT_DATE()) AND tip_produs='handmade' AND MONTH(data_ex)=$x";
+                                      $result=mysqli_query($con,$sql);
+                                      foreach($result as $data2)
+                                      {
+                                        $amount2[] = $data2['amount'] !== null ? $data2['amount'] : 0;                                      
+                                      }                                                          
+                                    }
+                                    
+
+              ?>
       
     </div>
   </main>
 
+  <?php
+              
+        
+                     
+
+  ?>
    
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
@@ -637,9 +782,9 @@ include 'connect.php';
     gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
 
     new Chart(ctx2, {
-      type: "line",
+      type: "line", 
       data: {
-        labels: ["Apr", "Mai", "Iun", "Iul", "Aug", "Sep", "Oct", "Noi", "Dec"],
+        labels: <?php echo json_encode($monthsUpToCurrent)?>,
         datasets: [{
             label: "Tablouri",
             tension: 0.4,
@@ -649,7 +794,7 @@ include 'connect.php';
             borderWidth: 3,
             backgroundColor: gradientStroke1,
             fill: true,
-            data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+            data: <?php echo json_encode($amount1)?>,
             maxBarThickness: 6
 
           },
@@ -662,7 +807,7 @@ include 'connect.php';
             borderWidth: 3,
             backgroundColor: gradientStroke2,
             fill: true,
-            data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+            data: <?php echo json_encode($amount2)?>,
             maxBarThickness: 6
           },
         ],
