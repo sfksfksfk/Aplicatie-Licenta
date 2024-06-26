@@ -30,7 +30,7 @@ include 'connect.php';
     Comenzi
   </title>
   <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="../assets/css/fontopensans.css" rel="stylesheet" />
   <!-- Nucleo Icons -->
   <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -283,7 +283,6 @@ include 'connect.php';
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">id</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">adresa</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">data expedierii</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">continut</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">valoare</th>
                     </tr>
                   </thead>
@@ -298,7 +297,7 @@ include 'connect.php';
 
 
                   <?php             
-                    $sql="SELECT * FROM comenzi ";
+                    $sql="SELECT * FROM comenzi ORDER BY idcomanda DESC";
                     $result=mysqli_query($con,$sql);
                     if($result){
 
@@ -309,30 +308,27 @@ include 'connect.php';
                             $dataex=$row['data_ex'];
                             $oras=$row['oras'];
                             $strada=$row['stradanr'];
-                            $idcon=$row['id_continut'];
                     
                             echo '
                             <tr>
                               <td>
                                 <div class="d-flex px-2">
                                   <div>
-                                  <i class="fa fa-archive me-2"></i>   
+                                  <a href="vizcomanda.php?id='.$id.'">
+                                  <i class="fa fa-archive me-2"></i>   </a>
                                   </div>
                                   <div class="my-auto">
-                                    <h6 class="mb-0 text-sm">#'.$id.'</h6>
+                                  <a href="vizcomanda.php?id='.$id.'">
+                                    <h6 class="mb-0 text-sm">#'.$id.'</h6></a>
                                   </div>
                                 </div>
                               </td>
                               <td>
-                                <p class="text-sm font-weight-bold mb-0">'.$oras.' '.$strada.'</p>
+                                  <a href="vizcomanda.php?id='.$id.'">
+                                <p class="text-sm font-weight-bold mb-0">'.$oras.' '.$strada.'</p></a>
                               </td>
                               <td>
                                 <span class="text-xs font-weight-bold">'.$dataex.'</span>
-                              </td>
-                              <td class="align-middle text-center">
-                                <div class="d-flex ">
-                                  <span class="me-2 text-xs font-weight-bold">'.$idcon.'</span>                                  
-                                </div>
                               </td>
                               <td class="align-middle text-center">
                                 <div class="d-flex ">

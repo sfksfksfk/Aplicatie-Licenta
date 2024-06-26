@@ -3,7 +3,6 @@ include 'connect.php';
 
 ?>
 
-
 <!--
 =========================================================
 * Soft UI Dashboard - v1.0.7
@@ -45,21 +44,18 @@ include 'connect.php';
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
-  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
 
       <span class="ms-1 font-weight-bold">Depozit de picturi electronic</span>
-     <!-- <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html " target="_blank">
-        <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold">Soft UI Dashboard</span>
-      </a> ---> 
+   
     </div>
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
+        
         <li class="nav-item">
-          <a class="nav-link " href="../pages/dashboard.php">
+          <a class="nav-link  " href="../pages/dashboard.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -79,7 +75,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/tablouri.php">
+          <a class="nav-link  active" href="tablouri.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -120,7 +116,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active " href="../pages/clienti.php">
+          <a class="nav-link  " href="../pages/clienti.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -182,6 +178,26 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link  " href="../pages/vanzaridistribuitori.php">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>document</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g transform="translate(154.000000, 300.000000)">
+                        <path class="color-background opacity-6" d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z"></path>
+                        <path class="color-background" d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z"></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="nav-link-text ms-1">Vanzari distribuitori</span>
+          </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link  " href="../pages/atelier.php">
               <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -208,18 +224,13 @@ include 'connect.php';
 
 
     <div class="sidenav-footer mx-3 ">
-      <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-        <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpg')"></div>
-        <div class="card-body text-start p-3 w-100">
-       
-          <div class="docs-info">
-            <h6 class="text-white up mb-0">Ai primit o comanda noua?</h6>
-            <p class="text-xs font-weight-bold">daca ai primit o comanda noua inregistreaz-o aici</p>
-            <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Comanda noua</a>
-          </div>
-        </div>
-      </div>
-      <a class="btn bg-gradient-primary mt-3 w-100" href="adaugatablou.php">Adauga tablou</a>
+        
+         
+            <a class="btn bg-gradient-success mt-0 w-100" href="adaugacomanda.php">Comanda Noua</a>
+            <a class="btn bg-gradient-success mt-0 w-100" href="adaugavanzare.php">Vanzare noua (distribuitor)</a>
+            <a class="btn bg-gradient-primary mt-0 w-100" href="adaugatablou.php">Adauga tablou</a>
+            <a class="btn bg-gradient-primary mt-0 w-100" href="adaugaprodus.php">Adauga produs handmade</a>
+
     </div>
   </aside>
 
@@ -230,13 +241,7 @@ include 'connect.php';
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pagini</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Pagina clienti</li>
-          </ol>
-          <h6 class="font-weight-bolder mb-0">Clienti</h6>
-        </nav>
+       
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
            <!-- <div class="input-group">
@@ -271,99 +276,104 @@ include 'connect.php';
 
       <div class="row">
         <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Clientii tai:</h6>
-            </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center justify-content-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">id</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">nume</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">email</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">telfon</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">adresa</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">facebook</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                      <td colspan="7" class="align-middle text-center">
-                        <a href="adaugaclient.php" class="text-primary font-weight-bold text-xl  mb-0">
-                            <i class="fa fa-plus"></i> Adauga un nou client</a>
-                      </td>
-                    </tr>
+            <div class="card card-plain mt-0">
+                <div class="card-header pb-0 text-left bg-transparent">
+                  <h3 class="font-weight-bolder text-primary text-gradient">EDITEAZA</h3>
+                  <p class="mb-0">Schimba informatiile din campurile de mai jos</br> Daca vrei sa stergi tabloul, apasa pe butonul de STERGE de la final</p>
+                </div>
+                <div class="card-body">
+                <?php
+                                        
+                        // Check if the product id is provided in the GET request
+                        if (isset($_GET['id'])) {
+                            // Retrieve the product id from the GET request
+                            $id = (int) $_GET['id'];
 
-                  <?php             
-                    $sql="SELECT * FROM clienti ORDER BY client_id DESC";
-                    $result=mysqli_query($con,$sql);
-                    if($result){
+                            // Fetch the product data from the database
+                            $sql = "SELECT * FROM tablouri WHERE id_tablou = $id";
+                            $result = mysqli_query($con, $sql);
 
-                        
-                        while($row=mysqli_fetch_assoc($result)){
-                            $id=$row['client_id'];
-                            $nume=$row['nume'];
-                            $email=$row['email'];
-                            $telefon=$row['telefon'];
-                            $oras=$row['oras'];
-                            $strada=$row['strada_nr'];
-                            $facebook=$row['facebook'];
-                    
-                            echo '
-                            <tr>
-                              <td>
-                                <div class="d-flex px-2">
-                                  <div>
-                                  <i class="fa fa-user me-2"></i>   
-                                  </div>
-                                  <div class="my-auto">
-                                    <h6 class="mb-0 text-sm">#'.$id.'</h6>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <p class="text-sm font-weight-bold mb-0">'.$nume.'</p>
-                              </td>
-                              <td>
-                                <span class="text-xs font-weight-bold">'.$email.'</span>
-                              </td>
-                              <td class="align-middle text-center">
-                                <div class="d-flex ">
-                                  <span class="me-2 text-xs font-weight-bold">'.$telefon.'</span>                                  
-                                </div>
-                              </td>
-                              <td class="align-middle text-center">
-                                <div class="d-flex ">
-                                  <span class="me-2 text-xs font-weight-bold">'.$oras.' '.$strada.'</span>                                  
-                                </div>
-                              </td>
-                              <td class="align-middle text-center">
-                                <div class="d-flex ">
-                                  <span class="me-2 text-xs font-weight-bold">'.$facebook.'</span>                                  
-                                </div>
-                              </td>
-                              <td class="align-middle">
-                                <a href="editeazaclient.php?id='.$id.'" class="text-secondary font-weight-bold text-xs mb-0" data-toggle="tooltip" data-original-title="Edit user">
-                                Edit
-                              </a>
-                              </td>
-                              
-                            </tr>';
+                            // Check if the product exists
+                            if ($result && mysqli_num_rows($result) > 0) {
+                                $product = mysqli_fetch_assoc($result);
+                            } else {
+                                echo '<h2 class="text-primary">Produsul nu a fost găsit.</h2>';
+                                exit;
+                            }
+                        } else {
+                            echo '<h2 class="text-primary">ID-ul produsului nu a fost furnizat.</h2>';
+                            exit;
                         }
-                    }
+                ?>
 
-                            ?>
-
-
-
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+<form action="updatetablou.php" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?php echo $product['id_tablou']; ?>">
+    <label>Titlu</label>
+    <div class="mb-0">
+        <input type="text" required class="form-control" value="<?php echo $product['titlu']?>" aria-label="titlu" name="titlu" value="<?php echo $product['titlu']; ?>">
+    </div>
+    <label>Tehnica</label>
+    <div class="mb-0 ">
+        <select name="tehnica" required class="form-control">
+            <option disabled selected value> -- selecteaza tipul de tehnica -- </option>
+            <option value="ulei" <?php if ($product['tehnica'] == 'ulei') echo 'selected'; ?>>ulei</option>
+            <option value="acuarela" <?php if ($product['tehnica'] == 'acuarela') echo 'selected'; ?>>acuarela</option>                      
+        </select>
+    </div>
+    <label>Tema</label>
+    <div class="mb-0">
+        <select name="tema" required class="form-control">
+            <option disabled selected value> -- selecteaza tipul de tema -- </option>
+            <option value="portret" <?php if ($product['tema'] == 'portret') echo 'selected'; ?>>portret</option>
+            <option value="peisaj" <?php if ($product['tema'] == 'peisaj') echo 'selected'; ?>>peisaj</option>
+            <option value="decorativ" <?php if ($product['tema'] == 'decorativ') echo 'selected'; ?>>decorativ</option>                      
+        </select>
+    </div>
+    <label>Subiect</label>
+    <div class="mb-0">
+        <input type="text" required class="form-control" value="<?php echo $product['subiect']; ?>" aria-label="subiect" name="subiect">
+    </div>
+    <label>Descriere</label>
+    <div class="mb-0">
+        <input type="text" required class="form-control" placeholder="ex: un tablou plin de culori 60x70 gata de pus pe perete" aria-label="descriere" name="descriere" value="<?php echo $product['descriere']; ?>">
+    </div>
+    <label>Sezon</label>
+    <div class="mb-0">
+        <select name="sezon" class="form-control" required>
+            <option disabled value> -- selecteaza tipul de sezon -- </option>
+            <option value="primavara" <?php if ($product['sezon'] == 'primavara') echo 'selected'; ?>>primavara</option>
+            <option value="vara" <?php if ($product['sezon'] == 'vara') echo 'selected'; ?>>vara</option>
+            <option value="toamna" <?php if ($product['sezon'] == 'toamna') echo 'selected'; ?>>toamna</option>
+            <option value="iarna" <?php if ($product['sezon'] == 'iarna') echo 'selected'; ?>>iarna</option>
+        </select>
+    </div>
+    <label>Pret (RON)</label>
+    <div class="mb-0">
+        <input type="number" class="form-control" required min="1" value="<?php echo $product['pret']; ?>" aria-label="pret" name="pret">
+    </div>
+    <label>Stoc</label>
+    <div class="mb-0 ">
+        <input type="number" class="form-control" required min="1" value="<?php echo $product['stoc']; ?>" aria-label="stoc" name="stoc">
+    </div>
+    <label>Poza</label>
+    <div class="mb-3">
+        <input type="file" id="photo" name="photo" accept="image/*" class="form-control">
+        <img src="../media/poze_tablouri/<?php echo $product['poza']; ?>" alt="Current Image" style="max-width: 100px;">
+    </div>
+    <div class="text-center">
+        <input type="submit" class="btn bg-gradient-primary w-100 mt-4 mb-0" value="Actualizează">
+    </div>
+</form>
+<form action="deletetablou.php" method="POST" onsubmit="return confirm('Sigur vrei sa stergi acest tablou definitiv?');">
+    <input type="hidden" name="id" value="<?php echo $product['id_tablou']; ?>">
+    <div class="text-center col-2">
+        <input type="submit" class="btn bg-gradient-danger w-100 mt-4 mb-0" value="Șterge">
+    </div>
+</form>
+                </div>
+                  </div>  
+        
+        
       </div>
 
       <footer class="footer pt-3  ">

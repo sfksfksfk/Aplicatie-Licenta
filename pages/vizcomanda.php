@@ -99,7 +99,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  active" href="produse.php">
+          <a class="nav-link  " href="produse.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -120,7 +120,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="clienti.php">
+          <a class="nav-link  active" href="clienti.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -253,7 +253,7 @@ include 'connect.php';
                                                       die("ID-ul produsului nu a fost specificat.");
                                                     }
 
-                                                    $sql="SELECT * FROM produse WHERE cod_produs = $id ";
+                                                    $sql="SELECT * FROM comenzi WHERE idcomanda = $id ";
                                                       $result=mysqli_query($con,$sql);
                                                       
                                                       if($result){    
@@ -264,16 +264,15 @@ include 'connect.php';
                                                         echo 'nu exista';
                                                         $exista = false;
                                                       }else{            
-                                                            $nume=$row['nume'];
-                                                            $sezon=$row['sezon'];
-                                                            $pret=$row['pret'];
-                                                            $stoc=$row['stoc'];
-                                                            $poza=$row['poza'];
-                                                            $descriere=$row['descriere'];
+                                                            $oras=$row['oras'];
+                                                            $strnr=$row['stradanr'];
+                                                            $idcl=$row['id_client'];
+                                                            $valoare=$row['valoare'];
+                                                            $dataex=$row['data_ex'];
                                                           }}
                                                         else echo'prost';
                                                         if($exista){
-                                                        echo $nume;}
+                                                        echo $oras;}
                                                         ?>
                        </h5>
                     <div class="d-flex">

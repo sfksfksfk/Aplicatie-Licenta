@@ -26,7 +26,7 @@
     Clienti
   </title>
   <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="../assets/css/fontopensans.css" rel="stylesheet" />
   <!-- Nucleo Icons -->
   <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -41,7 +41,7 @@
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
-  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
 
       <span class="ms-1 font-weight-bold">Depozit de picturi electronic</span>
@@ -54,8 +54,9 @@
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
+        
         <li class="nav-item">
-          <a class="nav-link " href="../pages/dashboard.php">
+          <a class="nav-link  " href="../pages/dashboard.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -75,7 +76,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="../pages/tablouri.php">
+          <a class="nav-link  active" href="tablouri.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -178,6 +179,26 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link  " href="../pages/vanzaridistribuitori.php">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>document</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g transform="translate(1716.000000, 291.000000)">
+                      <g transform="translate(154.000000, 300.000000)">
+                        <path class="color-background opacity-6" d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z"></path>
+                        <path class="color-background" d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z"></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <span class="nav-link-text ms-1">Vanzari distribuitori</span>
+          </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link  " href="../pages/atelier.php">
               <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -204,18 +225,13 @@
 
 
     <div class="sidenav-footer mx-3 ">
-      <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-        <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpg')"></div>
-        <div class="card-body text-start p-3 w-100">
-       
-          <div class="docs-info">
-            <h6 class="text-white up mb-0">Ai primit o comanda noua?</h6>
-            <p class="text-xs font-weight-bold">daca ai primit o comanda noua inregistreaz-o aici</p>
-            <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Comanda noua</a>
-          </div>
-        </div>
-      </div>
-      <a class="btn bg-gradient-primary mt-3 w-100" href="adaugatablou.php">Adauga tablou</a>
+        
+         
+            <a class="btn bg-gradient-success mt-0 w-100" href="adaugacomanda.php">Comanda Noua</a>
+            <a class="btn bg-gradient-success mt-0 w-100" href="adaugavanzare.php">Vanzare noua (distribuitor)</a>
+            <a class="btn bg-gradient-primary mt-0 w-100" href="adaugatablou.php">Adauga tablou</a>
+            <a class="btn bg-gradient-primary mt-0 w-100" href="adaugaprodus.php">Adauga produs handmade</a>
+
     </div>
   </aside>
 
@@ -267,43 +283,57 @@
                   <p class="mb-0">Minunat, ai realizat un tablou nou ! </br> Completeaza detaliile de mai jos pentru a-l adauga in baza de date</p>
                 </div>
                 <div class="card-body">
-                  <form  action="inserttablou.php" method="POST" >
+                  <form  action="inserttablou.php" method="POST" enctype="multipart/form-data">
                     <label>Titlu</label>
-                    <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="ex: Trandafirul magenta" aria-label="nume" name="titlu">
+                    <div class="mb-0">
+                      <input type="text" required class="form-control" placeholder="ex: Trandafirul magenta" aria-label="nume" name="titlu">
                     </div>
                     <label>tehnica</label>
-                    <div class="mb-3">
-                      <input type="email" class="form-control" placeholder="ex: ulei/acuarela" name="tehnica">
+                    <div class="mb-0 ">
+                      <select name="tehnica" required class="form-control">
+                        <option disabled selected value> -- selecteaza tipul de tehnica -- </option>
+                        <option value="ulei">ulei</option>
+                        <option value="acuarela">acuarela</option>                      
+                      </select>
                     </div>
                     <label>tema</label>
-                    <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="ex: peisaj/portret/decorativ" aria-label="tema" name="tema">
+                    <div class="mb-0">
+                    <select name="tema" required class="form-control">
+                        <option disabled selected value> -- selecteaza tipul de tema -- </option>
+                        <option value="portret">portret</option>
+                        <option value="peisaj">peisaj</option>
+                        <option value="decorativ">decorativ</option>                      
+                      </select>
                     </div>
                     <label>subiect</label>
-                    <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="ex: Trandafir" aria-label="subiect" name="subiect">
+                    <div class="mb-0">
+                      <input type="text" required class="form-control" placeholder="ex: Trandafir" aria-label="subiect" name="subiect">
                     </div>
                     <label>descriere</label>
-                    <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="ex: un tablou plin de culori 60x70 gata de pus pe perete" aria-label="descriere" name="descriere">
+                    <div class="mb-0">
+                      <input type="text" required class="form-control" placeholder="ex: un tablou plin de culori 60x70 gata de pus pe perete" aria-label="descriere" name="descriere">
                     </div>
                     <label>sezon</label>
-                    <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="ex: primavara/vara/toamna/iarna" aria-label="sezon" name="sezon">
+                    <div class="mb-0">
+                    <select name="sezon" class="form-control" required>
+                        <option disabled selected value> -- selecteaza tipul de sezon -- </option>
+                        <option value="primavara">primavara</option>
+                        <option value="vara">vara</option>
+                        <option value="toamna">toamna</option> 
+                        <option value="iarna">iarna</option>                      
+                      </select>
                     </div>
-                    <label>pret</label>
-                    <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="ex: 350" aria-label="pret" name="pret">
+                    <label>pret (RON)</label>
+                    <div class="mb-0">
+                      <input type="number" class="form-control" required min="1" value="1" aria-label="pret" name="pret">
                     </div>
                     <label>stoc</label>
-                    <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="ex: 2    " aria-label="stoc" name="stoc">
+                    <div class="mb-0 ">
+                      <input type="number" class="form-control" required min="1" value="1" aria-label="stoc" name="stoc">
                     </div>
                     <label>poza</label>
                     <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="ex: poza_trandafir.jpg" aria-label="poza" name="poza">
-                    </div>
+                    <input type="file" id="photo" name="photo" accept="image/*" class="form-control" required>  </div>
                     <div class="text-center">
                       <input type="submit" class="btn bg-gradient-primary w-100 mt-4 mb-0" value="Adauga">
                     </div>

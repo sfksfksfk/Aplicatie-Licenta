@@ -23,14 +23,14 @@ include 'connect.php';
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, ">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
     Soft UI Dashboard by Creative Tim
   </title>
   <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="../assets/css/fontopensans.css" rel="stylesheet" />
   <!-- Nucleo Icons -->
   <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -309,7 +309,7 @@ if($result){
 
         
             echo '
-            <div class="col-xl-2 col-md-10 mb-xl-5 mb-10">
+            <div class="col-xl-2 col-md-6 mb-xl-0 mb-4">
               <div class="card card-blog card-plain">
                 <div class="position-relative">
                   <a href = "viztablou.php?id='.$id.'" class="d-block shadow-xl border-radius-xl">
@@ -346,7 +346,7 @@ if($result){
                     <div class="card-body d-flex flex-column justify-content-center text-center">
                       <a href="adaugatablou.php">
                         <i class="fa fa-plus text-white mb-3"></i>
-                        <h5 class=" text-white" href="adaugatablou.php"> Tablou nou </h5>
+                        <h5 class=" text-white"> Tablou nou </h5>
                       </a>
                     </div>
                   </div>
@@ -374,9 +374,8 @@ if($result){
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Titlu si tehnica</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tema si subiect</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sezon</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Descriere</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Stoc</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pret</th>
+                      <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Stoc</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pret</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
@@ -440,9 +439,7 @@ if($result){
           
           echo '
           </td>
-          <td class="align-middle text-center " >
-            <span class="text-secondary text-xs font-weight-bold" >'.$descriere.'</span>
-          </td>
+       
           <td class="align-middle text-center">
             <span class="text-secondary text-xs font-weight-bold">'.$stoc.'</span>
           </td>
@@ -457,7 +454,7 @@ if($result){
           </td>
           
           <td class="align-middle">
-            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+            <a href="editeazatablou.php?id='.$id.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
               Edit
             </a>
           </td>

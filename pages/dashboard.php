@@ -29,7 +29,7 @@ include 'connect.php';
     Depozit de picturi electronic
   </title>
   <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="../assets/css/fontopensans.css" rel="stylesheet" />
   <!-- Nucleo Icons -->
   <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -182,7 +182,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/distribuitori.php">
+          <a class="nav-link  " href="../pages/vanzaridistribuitori.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
@@ -230,10 +230,10 @@ include 'connect.php';
     <div class="sidenav-footer mx-3 ">
         
          
-            <a class="btn bg-gradient-success mt-0 w-100" href="adaugatablou.php">Comanda Noua</a>
-            <a class="btn bg-gradient-success mt-0 w-100" href="adaugatablou.php">Vanzare noua</a>
+            <a class="btn bg-gradient-success mt-0 w-100" href="adaugacomanda.php">Comanda Noua</a>
+            <a class="btn bg-gradient-success mt-0 w-100" href="adaugavanzare.php">Vanzare noua (distribuitor)</a>
             <a class="btn bg-gradient-primary mt-0 w-100" href="adaugatablou.php">Adauga tablou</a>
-            <a class="btn bg-gradient-primary mt-0 w-100" href="adaugatablou.php">Adauga produs handmade</a>
+            <a class="btn bg-gradient-primary mt-0 w-100" href="adaugaprodus.php">Adauga produs handmade</a>
 
     </div>
   </aside>
@@ -689,7 +689,7 @@ include 'connect.php';
         <div class="col-lg-12">
           <div class="card z-index-2">
             <div class="card-header pb-0">
-              <h6>Analiza vanzarilor pe ultimele 9 luni</h6>
+              <h6>Analiza vanzarilor pe anul curent</h6>
             </div>
             <div class="card-body p-3">
               <div class="chart">
@@ -725,8 +725,12 @@ include 'connect.php';
 
                         for($x = 1 ; $x<=date('n') ; $x++)
                                       {
-                                          $sql="SELECT SUM(valoare) as amount
-                              FROM comenzi WHERE YEAR(data_ex) = YEAR(CURRENT_DATE()) AND tip_produs='tablou' AND MONTH(data_ex)=$x";
+                                          $sql="SELECT SUM(continut.cantitate * tablouri.pret) AS amount
+                                                  FROM comenzi
+                                                  JOIN continut ON comenzi.idcomanda = continut.id_comanda
+                                                  JOIN tablouri ON continut.id_produs = tablouri.id_tablou
+                                                  WHERE YEAR(comenzi.data_ex) = YEAR(CURRENT_DATE())
+                                                        AND continut.tip = 'tablou' AND MONTH(data_ex)=$x; ";
                                       $result=mysqli_query($con,$sql);
                                       foreach($result as $data2)
                                       {
@@ -736,8 +740,12 @@ include 'connect.php';
 
                                     for($x = 1 ; $x<=date('n') ; $x++)
                                       {
-                                          $sql="SELECT SUM(valoare) as amount
-                              FROM comenzi WHERE YEAR(data_ex) = YEAR(CURRENT_DATE()) AND tip_produs='handmade' AND MONTH(data_ex)=$x";
+                                          $sql="SELECT SUM(continut.cantitate * produse.pret) AS amount
+                                                  FROM comenzi
+                                                  JOIN continut ON comenzi.idcomanda = continut.id_comanda
+                                                  JOIN produse ON continut.id_produs = produse.cod_produs
+                                                  WHERE YEAR(comenzi.data_ex) = YEAR(CURRENT_DATE())
+                                                        AND continut.tip = 'handmade' AND MONTH(data_ex)=$x;";
                                       $result=mysqli_query($con,$sql);
                                       foreach($result as $data2)
                                       {

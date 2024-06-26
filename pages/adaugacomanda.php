@@ -30,6 +30,7 @@ include 'connect.php';
     Clienti
   </title>
   <!--     Fonts and icons     -->
+
   <link href="../assets/css/fontopensans.css" rel="stylesheet" />
   <!-- Nucleo Icons -->
   <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
@@ -42,6 +43,85 @@ include 'connect.php';
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+
+
+
+<?php
+
+
+
+function fetchProducts($type, $con) {
+    if ($type === 'tablou') {
+        $sql = "SELECT id_tablou, titlu, pret FROM tablouri";
+    } else if ($type === 'handmade') {
+        $sql = "SELECT cod_produs, nume, pret FROM produse";
+    }
+
+    $result = $con->query($sql);
+    $options = "";
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            if ($type === 'tablou') {
+                $options .= "<option value='" . $row["id_tablou"] . "'>" . $row["titlu"] . " - RON" . $row["pret"] . "</option>";
+            } else if ($type === 'handmade') {
+                $options .= "<option value='" . $row["cod_produs"] . "'>" . $row["nume"] . " - RON" . $row["pret"] . "</option>";
+            }
+        }
+    } else {
+        $options .= "<option value=''>No products available</option>";
+    }
+    
+    return $options;
+}
+
+if (isset($_GET['type'])) {
+    echo fetchProducts($_GET['type'], $con);
+    exit;
+}
+?>
+<script>
+        function fetchProducts(selectElement) {
+            var productType = selectElement.value;
+            var productSelect = selectElement.parentNode.querySelector('.productId');
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '?type=' + productType, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    productSelect.innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+
+        function addProductSelection() {
+            var container = document.getElementById('productSelectionContainer');
+            var newSelection = document.createElement('div');
+            newSelection.classList.add('product-selection');
+            newSelection.innerHTML = `
+                <label for="productType">Tip de produs:</label>
+                <select name="productType[]" class="productType form-control" onchange="fetchProducts(this)">
+                    <option disabled selected value> -- selecteaza tipul de produs -- </option>
+                    <option value="tablou">Tablou</option>
+                    <option value="handmade">Handmade</option>
+                </select>
+                
+                <label>Produsul:</label>
+                <select name="productId[]" class="productId form-control mb-3">
+                    <!-- Options will be populated here based on AJAX response -->
+                </select>
+                
+                <label>Cantitate:</label>
+                <input type="number" name="quantity[]" min="1" value="1">
+                
+                <br>
+            `;
+            container.appendChild(newSelection);
+        }
+    </script>
+
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -79,7 +159,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/tablouri.php">
+          <a class="nav-link active" href="../pages/tablouri.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -120,7 +200,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active " href="../pages/clienti.php">
+          <a class="nav-link  " href="../pages/clienti.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -230,13 +310,7 @@ include 'connect.php';
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pagini</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Pagina clienti</li>
-          </ol>
-          <h6 class="font-weight-bolder mb-0">Clienti</h6>
-        </nav>
+       
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
            <!-- <div class="input-group">
@@ -271,99 +345,86 @@ include 'connect.php';
 
       <div class="row">
         <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Clientii tai:</h6>
-            </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center justify-content-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">id</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">nume</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">email</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">telfon</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">adresa</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">facebook</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                      <td colspan="7" class="align-middle text-center">
-                        <a href="adaugaclient.php" class="text-primary font-weight-bold text-xl  mb-0">
-                            <i class="fa fa-plus"></i> Adauga un nou client</a>
-                      </td>
-                    </tr>
-
-                  <?php             
-                    $sql="SELECT * FROM clienti ORDER BY client_id DESC";
-                    $result=mysqli_query($con,$sql);
-                    if($result){
-
-                        
-                        while($row=mysqli_fetch_assoc($result)){
-                            $id=$row['client_id'];
-                            $nume=$row['nume'];
-                            $email=$row['email'];
-                            $telefon=$row['telefon'];
-                            $oras=$row['oras'];
-                            $strada=$row['strada_nr'];
-                            $facebook=$row['facebook'];
+            <div class="card card-plain mt-0">
+                <div class="card-header pb-0 text-left bg-transparent">
+                  <h3 class="font-weight-bolder text-primary text-gradient">COMANDA NOUA</h3>
+                  <p class="mb-0">Minunat, ai realizat o comanda noua ! </br> Completeaza detaliile de mai jos pentru a o adauga in baza de date</p>
+                </div>
+                <div class="card-body">
+                  <form  action="adaugacomanda2.php" method="POST" >
+                  <div id="productSelectionContainer">
+                        <div class="product-selection">
+                            
+                                        <label for="productType">Tip de produs:</label>
+                                        <select name="productType[]" class="productType form-control" onchange="fetchProducts(this)" >
+                                        <option disabled selected value> -- selecteaza tipul de produs -- </option>
+                                            <option value="tablou">Tablou</option>
+                                            <option value="handmade">Handmade</option>
+                                        </select>
+                            
+                            
+                                        <label>Produsul:</label>
+                                        <select name="productId[]" class="productId form-control mb-3" required>
+                                            <!-- Options will be populated here based on AJAX response -->
+                                        </select>
+                                        <label>Cantitate:</label>
+                <input type="number" name="quantity[]" min="1" value="1">
+                           
+                  
+                            <br>
+                        </div>
+                    </div>
                     
-                            echo '
-                            <tr>
-                              <td>
-                                <div class="d-flex px-2">
-                                  <div>
-                                  <i class="fa fa-user me-2"></i>   
-                                  </div>
-                                  <div class="my-auto">
-                                    <h6 class="mb-0 text-sm">#'.$id.'</h6>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <p class="text-sm font-weight-bold mb-0">'.$nume.'</p>
-                              </td>
-                              <td>
-                                <span class="text-xs font-weight-bold">'.$email.'</span>
-                              </td>
-                              <td class="align-middle text-center">
-                                <div class="d-flex ">
-                                  <span class="me-2 text-xs font-weight-bold">'.$telefon.'</span>                                  
-                                </div>
-                              </td>
-                              <td class="align-middle text-center">
-                                <div class="d-flex ">
-                                  <span class="me-2 text-xs font-weight-bold">'.$oras.' '.$strada.'</span>                                  
-                                </div>
-                              </td>
-                              <td class="align-middle text-center">
-                                <div class="d-flex ">
-                                  <span class="me-2 text-xs font-weight-bold">'.$facebook.'</span>                                  
-                                </div>
-                              </td>
-                              <td class="align-middle">
-                                <a href="editeazaclient.php?id='.$id.'" class="text-secondary font-weight-bold text-xs mb-0" data-toggle="tooltip" data-original-title="Edit user">
-                                Edit
-                              </a>
-                              </td>
-                              
-                            </tr>';
-                        }
-                    }
+                    <button type="button" onclick="addProductSelection()" class="btn">+ adauga produs</button>
+                    
+                    <br>
+                    <label for="existingClient">Client (daca nu e prima lui comanda):</label>
+                            <select name="existingClient" id="existingClient" class="form-control">
+                                <option value="">Alege</option>
+                                <?php
+                                // Assume $conn is your database connection object
+                                $sql = "SELECT client_id, nume FROM clienti";
+                                $result = $con->query($sql);
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<option value='" . $row["client_id"] . "'>" . $row["nume"] . "</option>";
+                                    }
+                                }
+                                ?>
+                            </select>
+                            </br>
+                   
+                            <label for="newClient">Numele clientului (daca e client nou) :</label>
+                            <input type="text" name="newClient" id="newClient" class="form-control">
+                            </br>
+                   
+                    <label>Oras expediere</label>
+                    <div class="mb-3">
+                      <input type="text" class="form-control" placeholder="ex: Bucuresti "  name="oras" required>
+                    </div>
 
-                            ?>
+                    <label>Strada si numar expediere</label>
+                    <div class="mb-3">
+                      <input type="text" class="form-control" placeholder="ex: Dorna 23 "  name="strnr" required>
+                    </div>
+                    
+
+                    <label>Data expediere</label>
+                    <div class="mb-3">
+                      <input type="date" class="form-control"   name="dataex" required>
+                    </div>
 
 
+                    <div class="text-center">
+                      <input type="submit" class="btn bg-gradient-primary w-100 mt-4 mb-0" value="Adauga">
+                    </div>
 
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+
+                  </form>
+                </div>
+                  </div>  
+        
+        
       </div>
 
       <footer class="footer pt-3  ">
