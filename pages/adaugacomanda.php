@@ -159,7 +159,7 @@ if (isset($_GET['type'])) {
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="../pages/tablouri.php">
+          <a class="nav-link " href="../pages/tablouri.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -221,7 +221,7 @@ if (isset($_GET['type'])) {
         </li>
         
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/comenzi.php">
+          <a class="nav-link  active" href="../pages/comenzi.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
@@ -356,22 +356,28 @@ if (isset($_GET['type'])) {
                         <div class="product-selection">
                             
                                         <label for="productType">Tip de produs:</label>
+                                        
+                                   
                                         <select name="productType[]" class="productType form-control" onchange="fetchProducts(this)" >
                                         <option disabled selected value> -- selecteaza tipul de produs -- </option>
                                             <option value="tablou">Tablou</option>
                                             <option value="handmade">Handmade</option>
                                         </select>
+                                        
                             
                             
                                         <label>Produsul:</label>
+                                        
                                         <select name="productId[]" class="productId form-control mb-3" required>
                                             <!-- Options will be populated here based on AJAX response -->
                                         </select>
+                                   
+
                                         <label>Cantitate:</label>
-                <input type="number" name="quantity[]" min="1" value="1">
-                           
-                  
-                            <br>
+                            
+                                      <div class="mb-2">
+                                        <input type="number" class="form-control" name="quantity[]" min="1" value="1">                        
+                                     </div>
                         </div>
                     </div>
                     
@@ -379,7 +385,9 @@ if (isset($_GET['type'])) {
                     
                     <br>
                     <label for="existingClient">Client (daca nu e prima lui comanda):</label>
-                            <select name="existingClient" id="existingClient" class="form-control">
+                            
+                    <div class="mb-0">
+                        <select name="existingClient" id="existingClient" class="form-control">
                                 <option value="">Alege</option>
                                 <?php
                                 // Assume $conn is your database connection object
@@ -392,26 +400,32 @@ if (isset($_GET['type'])) {
                                 }
                                 ?>
                             </select>
-                            </br>
-                   
+                            </div>
+                                
                             <label for="newClient">Numele clientului (daca e client nou) :</label>
+                            <div class="mb-0">
                             <input type="text" name="newClient" id="newClient" class="form-control">
-                            </br>
+                            </div>
+                           
                    
                     <label>Oras expediere</label>
-                    <div class="mb-3">
+                    <div class="mb-0">
                       <input type="text" class="form-control" placeholder="ex: Bucuresti "  name="oras" required>
                     </div>
 
                     <label>Strada si numar expediere</label>
-                    <div class="mb-3">
+                    <div class="mb-0">
                       <input type="text" class="form-control" placeholder="ex: Dorna 23 "  name="strnr" required>
                     </div>
                     
 
                     <label>Data expediere</label>
-                    <div class="mb-3">
+                    <div class="mb-2">
                       <input type="date" class="form-control"   name="dataex" required>
+                    </div>
+                    <label>Cost transport</label>
+                    <div class="mb-2">
+                      <input type="number" class="form-control"  min="0" value="20"  name="costtransport" required>
                     </div>
 
 

@@ -3,6 +3,7 @@ include 'connect.php';
 
 ?>
 
+
 <!--
 =========================================================
 * Soft UI Dashboard - v1.0.7
@@ -26,7 +27,7 @@ include 'connect.php';
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
-    Depozit de picturi electronic
+    Clienti
   </title>
   <!--     Fonts and icons     -->
   <link href="../assets/css/fontopensans.css" rel="stylesheet" />
@@ -41,6 +42,96 @@ include 'connect.php';
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  
+  <style>
+        .editor-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .wall-container {
+            position: relative;
+            width: 100%; /* Adjust the width as needed */
+            height: 60vh; /* Adjust the height as needed */
+            margin: auto;
+            background: url('../media/poze_pereti/adobestock_301324589.jpg') no-repeat center center;
+            background-size: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            border-radius: 10px;
+            transition: all 0.3s;
+            position: absolute;
+            cursor: move;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .image-container img {
+            display: block;
+            max-width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s, filter 0.3s;
+            
+        }
+
+        .frame-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Frame Styles */
+        .frame1 {
+            border: 15px solid rgba(0, 0, 0, .1);
+            background-image: url('../media/black_wood_texture.jpg');
+            background-size: cover;
+        }
+
+        .frame2 {
+            border: 10px solid rgba(240, 255, 100, .0);
+            background-image: url('../media/gold_wood.jpg');
+            background-size: cover;
+        }
+
+        .frame3 {
+            border: 18px solid rgba(255, 0, 0, .0);
+            background-image: url('../media/white_wood.jpg');
+            background-size: cover;
+        }
+    </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -57,7 +148,6 @@ include 'connect.php';
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
-        
         <li class="nav-item">
           <a class="nav-link " href="../pages/dashboard.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -79,7 +169,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="tablouri.php">
+          <a class="nav-link " href="../pages/tablouri.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -141,7 +231,7 @@ include 'connect.php';
         </li>
         
         <li class="nav-item">
-          <a class="nav-link active " href="../pages/comenzi.php">
+          <a class="nav-link  " href="../pages/comenzi.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
@@ -182,27 +272,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/distribuitori.php">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <title>document</title>
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                    <g transform="translate(1716.000000, 291.000000)">
-                      <g transform="translate(154.000000, 300.000000)">
-                        <path class="color-background opacity-6" d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z"></path>
-                        <path class="color-background" d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z"></path>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <span class="nav-link-text ms-1">Vanzari distribuitori</span>
-          </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link  " href="../pages/atelier.php">
+            <a class="nav-link active " href="../pages/atelier.php">
               <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <title>settings</title>
@@ -228,193 +298,137 @@ include 'connect.php';
 
 
     <div class="sidenav-footer mx-3 ">
-        
-         
-            <a class="btn bg-gradient-success mt-0 w-100" href="adaugacomanda.php">Comanda Noua</a>
-            <a class="btn bg-gradient-success mt-0 w-100" href="adaugatablou.php">Vanzare noua</a>
-            <a class="btn bg-gradient-primary mt-0 w-100" href="adaugatablou.php">Adauga tablou</a>
-            <a class="btn bg-gradient-primary mt-0 w-100" href="adaugatablou.php">Adauga produs handmade</a>
-
+      <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
+        <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpg')"></div>
+        <div class="card-body text-start p-3 w-100">
+       
+          <div class="docs-info">
+            <h6 class="text-white up mb-0">Ai primit o comanda noua?</h6>
+            <p class="text-xs font-weight-bold">daca ai primit o comanda noua inregistreaz-o aici</p>
+            <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Comanda noua</a>
+          </div>
+        </div>
+      </div>
+      <a class="btn bg-gradient-primary mt-3 w-100" href="adaugatablou.php">Adauga tablou</a>
     </div>
   </aside>
 
 
 
+  
+  <main class="main-content mt-1 border-radius-lg ">
+    <div class="border-radius-xl mt-3 mx-3 position-relative " style="    background-image: url('../assets/img/vr-bg.jpg') ; background-size: 100% 100%; ">
 
-
-
-
-
-
-
-  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-    <!-- Navbar -->
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
-      <div class="container-fluid py-1 px-3">
-       
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-           <!-- <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
-            </div>-->
-          </div>
-          <ul class="navbar-nav  justify-content-end">
+      <div class="container-fluid ">
+        
+        <div class="container-fluid  "  >
+          
+    </br> 
+    </br> 
+    </br>
             
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav"> 
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line"></i>
-                  <i class="sidenav-toggler-line"></i>
-                  <i class="sidenav-toggler-line"></i>
-                </div>
-              </a>
-            </li>
-           
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-
-
-
-
-    <!-- End Navbar -->
-    <div class="container-fluid py-4">
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Retrieve form data
-            $productTypes = $_POST['productType'];
-            $productIds = $_POST['productId'];
-            $quantities = $_POST['quantity'];
-            $existingClient = $_POST['existingClient'];
-            $newClient = $_POST['newClient'];
-            $oras = $_POST['oras'];
-            $strnr = $_POST['strnr'];
-            $dataex = $_POST['dataex'];
-            $cost_transport=$_POST['costtransport'];
-        
-            // Determine client ID based on whether it's an existing or new client
-            if (!empty($existingClient)) {
-                $clientId = $existingClient;
-            } elseif (!empty($newClient) && !empty($oras) && !empty($strnr)) {
-                // Insert new client into `clienti` table
-                $stmt = $con->prepare("INSERT INTO clienti (nume, oras, strada_nr) VALUES (?, ?, ?)");
-                $stmt->bind_param("sss", $newClient, $oras, $strnr);
-                $stmt->execute();
-                $clientId = $stmt->insert_id;
-                $stmt->close();
-            } else {
-                // Handle error if new client data is incomplete
-                echo "Error: Please provide all required new client information.";
-                exit;
-            }
-        
-            // Calculate the ID for the new order (comenzi table)
-            $stmt = $con->prepare("SELECT MAX(idcomanda) AS max_id FROM comenzi");
-            $stmt->execute();
-            $result = $stmt->get_result();
-            $row = $result->fetch_assoc();
-            $lastOrderId = $row['max_id'];
-            $newOrderId = $lastOrderId + 1;
-            $stmt->close();
-        
-            // Insert order details into `comenzi` table
-            $sql = "INSERT INTO comenzi (idcomanda, id_client, oras, stradanr, data_ex, cost_transport) 
-            VALUES ($newOrderId, $clientId, '$oras', '$strnr', '$dataex', '$cost_transport')";
-                
-                if ($con->query($sql) === true) {
-                    // Successfully inserted
-                    echo " ";
-                } else {
-                    // Error in insertion
-                    echo "Error: " . $sql . "<br>" . $con->error;
-                }
-        
-            // Insert products into `continut` table and calculate total order value
-            $totalValue = 0;
-            for ($i = 0; $i < count($productTypes); $i++) {
-                $type = $productTypes[$i];
-                $productId = $productIds[$i];
-                $quantity = $quantities[$i];
-        
-                // Fetch product price based on type
-                if ($type == "tablou") {
-                    $stmt = $con->prepare("SELECT pret, stoc FROM tablouri WHERE id_tablou = ?");
-                } elseif ($type == "handmade") {
-                    $stmt = $con->prepare("SELECT pret, stoc FROM produse WHERE cod_produs = ?");
-                }
-        
-                $stmt->bind_param("i", $productId);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                $row = $result->fetch_assoc();
-                $price = $row['pret'];
-                $stock = $row['stoc'];
-                $stmt->close();
-        
-                // Calculate total price for this product
-                $totalPrice = $price * $quantity;
-                $totalValue += $totalPrice;
-        
-                // Scade din stocul fiecarui
-                $newStock = $stock - $quantity;
-                if ($type == "tablou") {
-                    $stmt = $con->prepare("UPDATE tablouri SET stoc = ? WHERE id_tablou = ?");
-                } elseif ($type == "handmade") {
-                    $stmt = $con->prepare("UPDATE produse SET stoc = ? WHERE cod_produs = ?");
-                }
-        
-                $stmt->bind_param("ii", $newStock, $productId);
-                $stmt->execute();
-                $stmt->close();
-        
-
-                // Insert into `continut` table
-                $stmt = $con->prepare("INSERT INTO continut (id_comanda, tip, id_produs, cantitate) VALUES (?, ?, ?, ?)");
-                $stmt->bind_param("isis", $newOrderId, $type, $productId, $quantity);
-                $stmt->execute();
-                $stmt->close();
-
-            }
-            $totalValue +=$cost_transport;
-            // Update order value in `comenzi` table
-            $stmt = $con->prepare("UPDATE comenzi SET valoare = ? WHERE idcomanda = ?");
-            $stmt->bind_param("di", $totalValue, $newOrderId);
-            $stmt->execute();
-            $stmt->close();
-        
-            // Close database connection
-            $con->close();
-        
-            echo '<h2 class="text-primary">Comanda adaugata cu succes</h2>';
-            echo '<a href="dashboard.php">Foloseste acest link pentru a te intoarce </a>';  
-        }
-        
-        
-        
-        
-        ?>
-    
-        
-    </div>
-  </main>
-
-  <?php
+            <div class="col-lg-12 col-md-11">
               
         
-                     
 
-  ?>
-   
+         
+                    
+
+                    <div class="editor-container">
+                        
+                    <h5>Selecteaza o rama pentru tabloul tau si fixeaza-l pe perete</h5></br>
+                    <p class="">Apoi apasa pe butonul DOWNLOAD pentru a descarca imaginea sa o poti posta pe facebook</p>
+        <div class="wall-container mb-3" id="wallContainer">
+            <div class="image-container shadow">
+                <img  src="../media/poze_tablouri/448922892_994728655995909_1953286358155653482_n.jpg" id="painting" alt="Painting">
+            </div>
+        </div>
+        <div class="frame-controls">
+            <button class="frame-btn btn bg-gradient-primary mt-3" data-frame="frame1">Frame 1</button>
+            <button class="frame-btn btn bg-gradient-primary mt-3" data-frame="frame2">Frame 2</button>
+            <button class="frame-btn btn bg-gradient-primary mt-3" data-frame="frame3">Frame 3</button>
+            <button class="frame-btn btn bg-gradient-primary mt-3" data-frame="none">No Frame</button>
+            <button id="downloadBtn"class="btn bg-gradient-primary mt-3">Download</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const imageContainer = document.querySelector('.image-container');
+            const frameButtons = document.querySelectorAll('.frame-btn');
+            const painting = document.getElementById('painting');
+            const downloadBtn = document.getElementById('downloadBtn');
+
+            frameButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const frameStyle = button.getAttribute('data-frame');
+                    applyFrame(frameStyle);
+                });
+            });
+
+            function applyFrame(frameStyle) {
+                imageContainer.className = 'image-container shadow-xl'; // Reset classes
+                if (frameStyle !== 'none') {
+                    imageContainer.classList.add(frameStyle);
+                }
+            }
+
+            painting.addEventListener('mousedown', function(e) {
+                let offsetX = e.clientX - parseInt(window.getComputedStyle(imageContainer).left);
+                let offsetY = e.clientY - parseInt(window.getComputedStyle(imageContainer).top);
+
+                function mouseMoveHandler(e) {
+                    imageContainer.style.left = `${e.clientX - offsetX}px`;
+                    imageContainer.style.top = `${e.clientY - offsetY}px`;
+                }
+
+                function reset() {
+                    window.removeEventListener('mousemove', mouseMoveHandler);
+                    window.removeEventListener('mouseup', reset);
+                }
+
+                window.addEventListener('mousemove', mouseMoveHandler);
+                window.addEventListener('mouseup', reset);
+            });
+
+            downloadBtn.addEventListener('click', () => {
+                const wallContainer = document.getElementById('wallContainer');
+                if (!wallContainer) {
+                    console.error('Element with ID "wallContainer" not found.');
+                    return;
+                }
+
+                console.log('Element to capture:', wallContainer);
+                html2canvas(wallContainer).then(canvas => {
+                    let link = document.createElement('a');
+                    link.download = 'painting-on-wall.png';
+                    link.href = canvas.toDataURL();
+                    link.click();
+                }).catch(function(error) {
+                    console.error('Error occurred while capturing the image:', error);
+                });
+            });
+            });
+
+    </script>
+                  
+                    
+                 </div>
+                 
+    </br> 
+    </br>
+                
+              </div>
+          </div>
+        </div>
+      
+        </div>
+    </main>
+  
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
-  
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -428,6 +442,9 @@ include 'connect.php';
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
+
+
+
 </body>
 
 </html>

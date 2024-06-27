@@ -324,13 +324,13 @@ include 'connect.php';
              
                       </td>                      
                     </tr>
-
+                    <form action="editeazacomanda2.php" method="POST">
                     <tr>                     
                       <td>
                         <p class="text-xs font-weight-bold mb-0">Data livrarii</p>
                       </td>                     
                       <td class="align-middle text-end">
-                        <span class="text-primary text-s font-weight-bold"><?php if($exista)echo date('M/d/Y', strtotime($data_ex))?></span>
+                        <span class="text-primary text-s font-weight-bold"><input class="form-control" type="date" value="<?php if($exista)echo date('M/d/Y', strtotime($data_ex))?>" name="data_ex"></span>
                       </td>                      
                     </tr>
                     <tr>                     
@@ -338,7 +338,7 @@ include 'connect.php';
                         <p class="text-xs font-weight-bold mb-0">Oras</p>
                       </td>                     
                       <td class="align-middle text-end">
-                        <span class="text-primary text-s font-weight-bold"><?php if($exista)echo $oras?></span>
+                        <span class="text-primary text-s font-weight-bold"><input class="form-control" type="text" value="<?php if($exista)echo $oras?>" name="data_ex"></span>
                       </td>                      
                     </tr>
                     <tr>                     
@@ -396,7 +396,7 @@ include 'connect.php';
                       </td>                      
                     </tr>
                     
-                    
+                </form>
                   </tbody>
                 </table>
 
