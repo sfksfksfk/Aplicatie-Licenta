@@ -525,8 +525,8 @@ include 'connect.php';
                                                 <div class="d-flex align-items-center text-sm">
                                                     Comanda: ' . $valoare_comanda . ' RON<br>
                                                     Produs: ' . $valoare_produs . ' RON<br>
-                                                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
-                                                </div>
+                                                   <a href="facturatest.php?id='.$idcomanda.'" target=”_blank” class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</a>
+                                               </div>
                                             </li>
                                         ';
                                     }

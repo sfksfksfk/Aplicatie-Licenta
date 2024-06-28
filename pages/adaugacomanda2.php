@@ -294,17 +294,21 @@ include 'connect.php';
             $strnr = $_POST['strnr'];
             $dataex = $_POST['dataex'];
             $cost_transport=$_POST['costtransport'];
+            $cif=$_POST['CIF'];
         
             // Determine client ID based on whether it's an existing or new client
             if (!empty($existingClient)) {
                 $clientId = $existingClient;
             } elseif (!empty($newClient) && !empty($oras) && !empty($strnr)) {
                 // Insert new client into `clienti` table
-                $stmt = $con->prepare("INSERT INTO clienti (nume, oras, strada_nr) VALUES (?, ?, ?)");
-                $stmt->bind_param("sss", $newClient, $oras, $strnr);
+                $stmt = $con->prepare("INSERT INTO clienti (nume, oras, strada_nr, cif) VALUES (?, ?, ?, ?)");
+                $stmt->bind_param("ssss", $newClient, $oras, $strnr, $cif);
                 $stmt->execute();
                 $clientId = $stmt->insert_id;
                 $stmt->close();
+
+              
+
             } else {
                 // Handle error if new client data is incomplete
                 echo "Error: Please provide all required new client information.";

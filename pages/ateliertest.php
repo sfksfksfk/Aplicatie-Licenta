@@ -3,6 +3,38 @@ include 'connect.php';
 
 ?>
 
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                    
+  $id_tablou=  $_POST['selected-tablou'];
+$id_perete = $_POST['selected-perete'];
+
+
+$sql="SELECT poza FROM tablouri WHERE id_tablou = $id_tablou";
+
+$result=mysqli_query($con,$sql);
+
+if($result){     
+$row=mysqli_fetch_assoc($result); 
+$poza_tablou=$row['poza'];
+
+}
+
+
+$sql="SELECT poza_perete FROM pereti WHERE id_perete = $id_perete";
+
+$result=mysqli_query($con,$sql);
+
+if($result){     
+$row=mysqli_fetch_assoc($result); 
+$poza_perete=$row['poza_perete'];
+
+}
+
+
+
+}
+?>
 
 <!--
 =========================================================
@@ -61,7 +93,7 @@ include 'connect.php';
             width: 100%; /* Adjust the width as needed */
             height: 60vh; /* Adjust the height as needed */
             margin: auto;
-            background: url('../media/poze_pereti/adobestock_301324589.jpg') no-repeat center center;
+            background: url('../media/poze_pereti/<?php echo $poza_perete;?>') no-repeat center center;
             background-size: cover;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -323,8 +355,6 @@ include 'connect.php';
         
         <div class="container-fluid  "  >
           
-    </br> 
-    </br> 
     </br>
             
             <div class="col-lg-12 col-md-11">
@@ -340,15 +370,17 @@ include 'connect.php';
                     <p class="">Apoi apasa pe butonul DOWNLOAD pentru a descarca imaginea sa o poti posta pe facebook</p>
         <div class="wall-container mb-3" id="wallContainer">
             <div class="image-container shadow">
-                <img  src="../media/poze_tablouri/448922892_994728655995909_1953286358155653482_n.jpg" id="painting" alt="Painting">
+                <img  src="../media/poze_tablouri/<?php echo $poza_tablou?>" id="painting" alt="Painting">
             </div>
         </div>
         <div class="frame-controls">
-            <button class="frame-btn btn bg-gradient-primary mt-3" data-frame="frame1">Frame 1</button>
-            <button class="frame-btn btn bg-gradient-primary mt-3" data-frame="frame2">Frame 2</button>
-            <button class="frame-btn btn bg-gradient-primary mt-3" data-frame="frame3">Frame 3</button>
-            <button class="frame-btn btn bg-gradient-primary mt-3" data-frame="none">No Frame</button>
-            <button id="downloadBtn"class="btn bg-gradient-primary mt-3">Download</button>
+            <button class="frame-btn btn bg-gradient-secondary mt-3" data-frame="frame1">Rama 1</button>
+            <button class="frame-btn btn bg-gradient-secondary mt-3" data-frame="frame2">Rama 2</button>
+            <button class="frame-btn btn bg-gradient-secondary mt-3" data-frame="frame3">Rama 3</button>
+            <button class="frame-btn btn bg-gradient-secondary mt-3" data-frame="none">Fara rama</button>
+           <div>
+            <button id="downloadBtn"class="btn bg-gradient-primary mt-3">Descarca</button>
+      </div>
         </div>
     </div>
     <script>
@@ -414,7 +446,6 @@ include 'connect.php';
                     
                  </div>
                  
-    </br> 
     </br>
                 
               </div>

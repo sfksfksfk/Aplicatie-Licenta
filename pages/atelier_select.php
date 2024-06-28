@@ -1,7 +1,7 @@
 <?php
 include 'connect.php';
-
 ?>
+
 
 
 <!--
@@ -27,7 +27,7 @@ include 'connect.php';
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
-    Clienti
+    Soft UI Dashboard by Creative Tim
   </title>
   <!--     Fonts and icons     -->
   <link href="../assets/css/fontopensans.css" rel="stylesheet" />
@@ -42,10 +42,112 @@ include 'connect.php';
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .custom-select-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .select-selected {
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .select-selected img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .select-items {
+            position: absolute;
+            background-color: #f1f1f1;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-top: none;
+            z-index: 99;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .select-hide {
+            display: none;
+        }
+
+        .select-option {
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .select-option img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .select-option:hover {
+            background-color: #ddd;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
-  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
 
       <span class="ms-1 font-weight-bold">Depozit de picturi electronic</span>
@@ -59,7 +161,7 @@ include 'connect.php';
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link " href="../pages/dashboard.php">
+          <a class="nav-link " href="../pages/dashboard.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -79,7 +181,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/tablouri.php">
+          <a class="nav-link " href="tablouri.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -99,7 +201,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/produse.php">
+          <a class="nav-link  " href="produse.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -120,7 +222,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active " href="../pages/clienti.php">
+          <a class="nav-link " href="clienti.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -141,7 +243,7 @@ include 'connect.php';
         </li>
         
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/comenzi.php">
+          <a class="nav-link  active" href="comenzi.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
@@ -161,7 +263,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="../pages/distribuitori.php">
+          <a class="nav-link  " href="distribuitori.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>customer-support</title>
@@ -181,27 +283,6 @@ include 'connect.php';
             <span class="nav-link-text ms-1">Distribuitori</span>
           </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link  " href="../pages/atelier.php">
-              <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <title>settings</title>
-                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                      <g transform="translate(1716.000000, 291.000000)">
-                        <g transform="translate(304.000000, 151.000000)">
-                          <polygon class="color-background opacity-6" points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667"></polygon>
-                          <path class="color-background opacity-6" d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z"></path>
-                          <path class="color-background" d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"></path>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-              <span class="nav-link-text ms-1">Atelier</span>
-            </a>
-          </li>
       </ul>
     </div>
 
@@ -209,13 +290,13 @@ include 'connect.php';
 
     <div class="sidenav-footer mx-3 ">
       <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-        <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpg')"></div>
+        <div class="full-background" style="background-image: url('../assets/img/curved-images/curved8.jpg')"></div>
         <div class="card-body text-start p-3 w-100">
        
           <div class="docs-info">
             <h6 class="text-white up mb-0">Ai primit o comanda noua?</h6>
             <p class="text-xs font-weight-bold">daca ai primit o comanda noua inregistreaz-o aici</p>
-            <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Comanda noua</a>
+            <a href="adaugacomanda.php" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Comanda noua</a>
           </div>
         </div>
       </div>
@@ -223,21 +304,19 @@ include 'connect.php';
     </div>
   </aside>
 
-
-
-
+  
+  
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
-       
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-           <!-- <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
-            </div>-->
+              <!--PLACEHOLDER PT BUTOANELE DIN DREAPTA-->
           </div>
+
+          
           <ul class="navbar-nav  justify-content-end">
             
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -255,49 +334,187 @@ include 'connect.php';
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
-        
 
 
 
 
 
-
+    <div class="container-fluid py-4" style="height:90%;">
       <div class="row">
-        <div class="col-12">
-            <div class="card card-plain mt-0">
-               
-                  </div>  
-
-
-                  <?php
-                  if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        <div class="col-lg-12">
+          <div class="row">
+            
+          <div class="col-md-3 mb-lg-0 mb-4">
+            </div>
+            <div class="col-md-6 mb-lg-0 mb-4">
+              <div class="card mt-0">
+                <div class="card-header pb-0 p-3">
+                  <div class="row">
+                    <div class="col-12 d-flex align-items-center">
+                       
+                      <h6 class="mb-0">Selecteaza tabloul si pertele pe care vrei sa le folosesti</h6>
+                    </div>
                     
-                    $nume =  $_POST['nume2'];
-                  $email = $_POST['email'];
-                  $telefon =  $_POST['telefon'];
-                  $oras = $_POST['oras'];
-                  $strada = $_POST['stradanr'];
-                  $facebook = $_POST['facebook'];
-                  $cif=$_POST['cif'];
-                  }
+                  </div>
+                </div>
 
-                  $sql = "INSERT INTO clienti (nume, email, telefon, oras, strada_nr, facebook, cif) VALUES ('$nume','$email','$telefon','$oras','$strada','$facebook', '$cif')";
-                  
-                  if(mysqli_query($con, $sql)){
-                    echo ' <div class="card-header pb-0 text-left bg-transparent">
-                    <h3 class="font-weight-bolder text-primary text-gradient">Noul client a fost inregistrat cu succes!</h3>
-                    </br></br><a href="clienti.php" class="mb-0"> Apasa pe acest link pentru a te intoarce la pagina de clienti sa verifici</a>
-                  </div>'; 
-         
-                } else{
-                    echo "ERROR: Hush! Sorry $sql. "
-                        . mysqli_error($con);
+                <div class="card-body p-3">
+                  <div class="row">
+                    <div class="col-md-12    mb-md-0 mb-4">
+                      <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
+                      
+
+                    
+                      <div class="form-container">
+        <form id="selection-form" action="ateliertest.php" method="POST">
+            <!-- Tablou Selection -->
+            <div class="custom-select-container">
+                <div class="custom-select">
+                    <div class="select-selected form-control" id="tablou-selected">Alege tabloul</div>
+                    <div class="select-items select-hide" id="tablou-options">
+                        <?php
+                            
+
+                            // Fetch tablouri from the database
+                            $sql = "SELECT id_tablou, titlu, poza FROM tablouri";
+                            $result = $con->query($sql);
+
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo '<div data-value="' . $row['id_tablou'] . '" class="select-option tablou-option">';
+                                    echo '<img src="../media/poze_tablouri/' . $row['poza'] . '" alt="' . $row['titlu'] . '"> ' . $row['titlu'];
+                                    echo '</div>';
+                                }
+                            } else {
+                                echo '<div>No tablouri found</div>';
+                            }
+                        ?>
+                    </div>
+                </div>
+                <input type="hidden" name="selected-tablou" id="selected-tablou" required>
+            </div>
+
+            <!-- Perete Selection -->
+            <div class="custom-select-container">
+                <div class="custom-select">
+                    <div class="select-selected form-control" id="perete-selected">Select a perete</div>
+                    <div class="select-items select-hide" id="perete-options">
+                        <?php
+                            // Fetch pereti from the database
+                            $sql = "SELECT id_perete, poza_perete FROM pereti";
+                            $result = $con->query($sql);
+
+                            if ($result->num_rows > 0) {
+                                $counter = 1;
+                                while ($row = $result->fetch_assoc()) {
+                                    echo '<div data-value="' . $row['id_perete'] . '" class="select-option perete-option">';
+                                    echo '<img src="../media/poze_pereti/' . $row['poza_perete'] . '" alt="perete-' . $counter . '"> perete-' . $counter;
+                                    echo '</div>';
+                                    $counter++;
+                                }
+                            } else {
+                                echo '<div>No pereti found</div>';
+                            }
+
+                            $con->close();
+                        ?>
+                    </div>
+                </div>
+                <input type="hidden" name="selected-perete" id="selected-perete" required>
+            </div>
+
+            <button type="submit" id="submit-button" class="btn bg-gradient-primary" disabled>Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function setupSelect(selectSelected, optionsContainer, options, hiddenInput) {
+                selectSelected.addEventListener('click', function() {
+                    optionsContainer.classList.toggle('select-hide');
+                });
+
+                options.forEach(option => {
+                    option.addEventListener('click', function() {
+                        selectSelected.innerHTML = this.innerHTML;
+                        selectSelected.setAttribute('data-value', this.getAttribute('data-value'));
+                        hiddenInput.value = this.getAttribute('data-value');
+                        optionsContainer.classList.add('select-hide');
+                        checkFormValidity();
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!e.target.matches('.select-selected') && !e.target.matches('.select-option')) {
+                        optionsContainer.classList.add('select-hide');
+                    }
+                });
+            }
+
+            function checkFormValidity() {
+                const selectedTablouValue = document.getElementById('selected-tablou').value;
+                const selectedPereteValue = document.getElementById('selected-perete').value;
+                const submitButton = document.getElementById('submit-button');
+
+                if (selectedTablouValue && selectedPereteValue) {
+                    submitButton.disabled = false;
+                } else {
+                    submitButton.disabled = true;
                 }
-                  ?>
+            }
 
+            // Handle Tablou selection
+            const selectedTablou = document.getElementById('tablou-selected');
+            const optionsContainerTablou = document.getElementById('tablou-options');
+            const optionsTablou = document.querySelectorAll('.tablou-option');
+            const hiddenInputTablou = document.getElementById('selected-tablou');
+
+            setupSelect(selectedTablou, optionsContainerTablou, optionsTablou, hiddenInputTablou);
+
+            // Handle Perete selection
+            const selectedPerete = document.getElementById('perete-selected');
+            const optionsContainerPerete = document.getElementById('perete-options');
+            const optionsPerete = document.querySelectorAll('.perete-option');
+            const hiddenInputPerete = document.getElementById('selected-perete');
+
+            setupSelect(selectedPerete, optionsContainerPerete, optionsPerete, hiddenInputPerete);
+        });
+    </script>
+                   
+
+                                    
+
+                      </div> <div class=" text p-2">
+                     
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            
+          </div>
+          
+        <div class="col-lg-2">
+          
+        </div>
+        
+      </div>
+
+
+
+
+      
         </div>
 
+     
+
+    
+
+      
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -306,18 +523,40 @@ include 'connect.php';
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-                Lucrare de licenta realizata de
-                <a href="" class="font-weight-bold" target="_blank">Sofica Radu</a>
-                in cadrul URA.
+                made with <i class="fa fa-heart"></i> by
+                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+                for a better web.
               </div>
-            </div>           
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-
       </footer>
     </div>
   </main>
   
+
+  
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+
+
+
+
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>

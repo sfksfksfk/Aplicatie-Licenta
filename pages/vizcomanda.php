@@ -27,7 +27,7 @@ include 'connect.php';
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
-    Soft UI Dashboard by Creative Tim
+    Mirela Sofica
   </title>
   <!--     Fonts and icons     -->
   <link href="../assets/css/fontopensans.css" rel="stylesheet" />
@@ -310,7 +310,7 @@ include 'connect.php';
 
                 <div class="card-body p-3">
                   <div class="row">
-                    <div class="col-md-9 mb-md-0 mb-4">
+                    <div class="col-md-12 mb-md-0 mb-4">
                       <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
                         
                    
@@ -548,7 +548,7 @@ include 'connect.php';
                                                 <div class="d-flex text-primary font-weight-bold align-items-center text-sm">
                                                    
                                                     ' . $totalvaloare . ' RON <br>
-                                                    <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button>
+                                                    <a href="facturatest.php?id='.$id.'" target=”_blank” class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</a>
                                                 </div>
                                             </li>';
                                      }
