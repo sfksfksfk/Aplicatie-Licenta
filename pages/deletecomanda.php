@@ -1,7 +1,8 @@
 <?php
 include 'connect.php';
-
 ?>
+
+
 
 <!--
 =========================================================
@@ -26,7 +27,7 @@ include 'connect.php';
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
-    Clienti
+    Mirela Sofica
   </title>
   <!--     Fonts and icons     -->
   <link href="../assets/css/fontopensans.css" rel="stylesheet" />
@@ -95,7 +96,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  active" href="produse.php">
+          <a class="nav-link  " href="produse.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -137,7 +138,7 @@ include 'connect.php';
         </li>
         
         <li class="nav-item">
-          <a class="nav-link " href="comenzi.php">
+          <a class="nav-link active " href="comenzi.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
@@ -192,21 +193,19 @@ include 'connect.php';
     </div>
   </aside>
 
-
-
-
+  
+  
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
-       
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-           <!-- <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
-            </div>-->
+              <!--PLACEHOLDER PT BUTOANELE DIN DREAPTA-->
           </div>
+
+          
           <ul class="navbar-nav  justify-content-end">
             
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -224,111 +223,96 @@ include 'connect.php';
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
-        
 
 
 
 
 
-
+    <div class="container-fluid py-4" style="height:90%;">
       <div class="row">
-        <div class="col-12">
-            <div class="card card-plain mt-0">
-                <div class="card-header pb-0 text-left bg-transparent">
-                  <h3 class="font-weight-bolder text-primary text-gradient">EDITEAZA</h3>
-                  <p class="mb-0">Schimba informatiile din campurile de mai jos</br></p>
-                </div>
-                <div class="card-body">
-                <?php
-                                        
-                        // Check if the product id is provided in the GET request
-                        if (isset($_GET['id'])) {
-                            // Retrieve the product id from the GET request
-                            $id = (int) $_GET['id'];
+      <?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST' ) {
+    $orderId = $_POST['order_id'];
 
-                            // Fetch the product data from the database
-                            $sql = "SELECT * FROM produse WHERE cod_produs = $id";
-                            $result = mysqli_query($con, $sql);
+    // Fetch products from the order
+    $stmt = $con->prepare("SELECT id_produs, cantitate, tip FROM continut WHERE id_comanda = ?");
+    $stmt->bind_param("i", $orderId);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-                            // Check if the product exists
-                            if ($result && mysqli_num_rows($result) > 0) {
-                                $product = mysqli_fetch_assoc($result);
-                            } else {
-                                echo '<h2 class="text-primary">Produsul nu a fost găsit.</h2>';
-                                exit;
-                            }
-                        } else {
-                            echo '<h2 class="text-primary">ID-ul produsului nu a fost furnizat.</h2>';
-                            exit;
-                        }
-                ?>
+    while ($row = $result->fetch_assoc()) {
+        $productId = $row['id_produs'];
+        $quantity = $row['cantitate'];
+        $type = $row['tip'];
 
-                <form action="updateprodus.php" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?php echo $product['cod_produs']; ?>">
-        <label>Nume</label>
-        <div class="mb-0">
-            <input type="text" required class="form-control" placeholder="ex: Martisor fulg de nea" aria-label="nume" name="nume" value="<?php echo $product['nume']; ?>">
+        // Update stock for tablouri or produse
+        if ($type === 'tablou') {
+            $updateStmt = $con->prepare("UPDATE tablouri SET stoc = stoc + ? WHERE id_tablou = ?");
+        } else if ($type === 'handmade') {
+            $updateStmt = $con->prepare("UPDATE produse SET stoc = stoc + ? WHERE cod_produs = ?");
+        }
+
+        $updateStmt->bind_param("ii", $quantity, $productId);
+        $updateStmt->execute();
+        $updateStmt->close();
+    }
+
+    // Delete the order from continut
+    $deleteContentStmt = $con->prepare("DELETE FROM continut WHERE id_comanda = ?");
+    $deleteContentStmt->bind_param("i", $orderId);
+    $deleteContentStmt->execute();
+    $deleteContentStmt->close();
+
+    // Delete the order from comenzi
+    $deleteOrderStmt = $con->prepare("DELETE FROM comenzi WHERE idcomanda = ?");
+    $deleteOrderStmt->bind_param("i", $orderId);
+    $deleteOrderStmt->execute();
+    $deleteOrderStmt->close();
+
+    echo '
+                    <h5 >Comanda a fost ștearsă din baza de date</h5>
+                    </br>
+                    
+            <a href="comenzi.php">Foloseste acest link sa te intorci pe pagina de comenzi</a> </br></br></br>';
+} else {
+    echo "Invalid request.";
+}
+?>
+
+
+
+        
+
+
+
+      
         </div>
-        <label>Descriere</label>
-        <div class="mb-0">
-            <input type="text" required class="form-control" placeholder="ex: un tablou plin de culori 60x70 gata de pus pe perete" aria-label="descriere" name="descriere" value="<?php echo $product['descriere']; ?>">
-        </div>
-        <label>Sezon</label>
-        <div class="mb-0">
-            <select name="sezon" class="form-control" required>
-                <option disabled value> -- selecteaza tipul de sezon -- </option>
-                <option value="primavara" <?php if ($product['sezon'] == 'primavara') echo 'selected'; ?>>primavara</option>
-                <option value="vara" <?php if ($product['sezon'] == 'vara') echo 'selected'; ?>>vara</option>
-                <option value="toamna" <?php if ($product['sezon'] == 'toamna') echo 'selected'; ?>>toamna</option>
-                <option value="iarna" <?php if ($product['sezon'] == 'iarna') echo 'selected'; ?>>iarna</option>
-            </select>
-        </div>
-        <label>Pret (RON)</label>
-        <div class="mb-0">
-            <input type="number" class="form-control" required min="1" value="<?php echo $product['pret']; ?>" aria-label="pret" name="pret">
-        </div>
-        <label>Stoc</label>
-        <div class="mb-0 ">
-            <input type="number" class="form-control" required min="1" value="<?php echo $product['stoc']; ?>" aria-label="stoc" name="stoc">
-        </div>
-        <label>Poza</label>
-        <div class="mb-0">
-            <input type="file" id="photo" name="photo" accept="image/*" class="form-control mb-2">
-            <img src="../media/poze_produse/<?php echo $product['poza']; ?>" alt="Current Image" style="max-width: 100px;">
-        </div>
-        <div class="text-center">
-            <input type="submit" class="btn bg-gradient-primary w-100 mt-4 mb-0" value="Actualizează">
-        </div>
-    </form>
+
+     
+
     
-             
-                </div>
-                  </div>  
-        
-        
-      </div>
 
+      
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                Lucrare de licenta realizata de
-                <a href="" class="font-weight-bold" target="_blank">Sofica Radu</a>
-                in cadrul URA.
-              </div>
-            </div>           
+             
+            </div>
+        
           </div>
         </div>
-
       </footer>
     </div>
   </main>
   
+
+  
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+
+
+
+
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>

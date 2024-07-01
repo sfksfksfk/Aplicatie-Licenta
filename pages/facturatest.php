@@ -245,7 +245,7 @@ if (isset($_GET['id'])) {
             <table>
                 <tr>
                     <td><strong>Total:</strong></td>
-                    <td><?php echo number_format($orderValoare-$cost_transport, 2); ?></td>
+                    <td><?php echo number_format($orderValoare, 2); ?></td>
                 </tr>
             </table>
         </div>

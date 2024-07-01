@@ -44,7 +44,7 @@
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
 
-      <span class="ms-1 font-weight-bold">&nbsp &nbsp Mirela Sofica ART <i class="fas fa-paint-brush" ></i></span>
+      <span class="ms-1 font-weight-bold">&nbsp &nbsp Mirela Sofica ART <i class="fas fa-palette" ></i></span>
      
     </div>
     <hr class="horizontal dark mt-0">
@@ -52,7 +52,7 @@
       <ul class="navbar-nav">
         
         <li class="nav-item">
-          <a class="nav-link  " href="dashboard.php">
+          <a class="nav-link " href="dashboard.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -113,7 +113,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  active" href="clienti.php">
+          <a class="nav-link active " href="clienti.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>

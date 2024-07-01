@@ -399,10 +399,6 @@ if (isset($_GET['type'])) {
                     <div class="mb-2">
                       <input type="date" class="form-control"   name="dataex" required>
                     </div>
-                    <label>Cost transport</label>
-                    <div class="mb-2">
-                      <input type="number" class="form-control"  min="0" value="20"  name="costtransport" required>
-                    </div>
 
 
                     <div class="text-center">

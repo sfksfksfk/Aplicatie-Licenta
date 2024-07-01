@@ -44,7 +44,7 @@ include 'connect.php';
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
 
-      <span class="ms-1 font-weight-bold">&nbsp &nbsp Mirela Sofica ART <i class="fas fa-paint-brush" ></i></span>
+      <span class="ms-1 font-weight-bold">&nbsp &nbsp Mirela Sofica ART <i class="fas fa-palette" ></i></span>
      
     </div>
     <hr class="horizontal dark mt-0">
@@ -249,11 +249,12 @@ include 'connect.php';
                       $row=mysqli_fetch_assoc($result);
                       $suma=$row['total_vanzari'];
                       
-                      echo '<h7 class="font-weight-bolder mb-0">'.$suma.' RON</h7>';
+                      echo '<h7 class="font-weight-bolder mb-0">'.$suma.' RON </h7>';
                     
                     }
 
-                    $sql2="SELECT SUM(valoare) AS total_vanzari2  FROM comenzi WHERE data_ex BETWEEN DATE_FORMAT(NOW() - INTERVAL 1 MONTH, '%Y-%m-01 00:00:00')
+                    $sql2="SELECT SUM(valoare) AS total_vanzari2  FROM comenzi 
+                    WHERE data_ex BETWEEN DATE_FORMAT(NOW() - INTERVAL 1 MONTH, '%Y-%m-01 00:00:00')
                     AND DATE_FORMAT(LAST_DAY(NOW() - INTERVAL 1 MONTH), '%Y-%m-%d 23:59:59')";
                     $result2=mysqli_query($con,$sql2);
                     if($result2){
@@ -291,7 +292,8 @@ include 'connect.php';
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Vanzari luna trecuta</p>
                     
                     <?php 
-                                        $sql="SELECT SUM(valoare) AS total_vanzari  FROM comenzi WHERE MONTH(data_ex) = MONTH(CURRENT_DATE())-1
+                                        $sql="SELECT SUM(valoare) AS total_vanzari  FROM comenzi 
+                                        WHERE MONTH(data_ex) = MONTH(CURRENT_DATE())-1
                                         AND YEAR(data_ex) = YEAR(CURRENT_DATE())";
                                         $result=mysqli_query($con,$sql);
                                         if($result){
@@ -331,7 +333,7 @@ include 'connect.php';
                      
                       $row=mysqli_fetch_assoc($result);
                       $suma=$row['total_vanzari'];
-                      echo '<h7 class="font-weight-bolder mb-0">'.$suma.' RON</h7>';
+                      echo '<h7 class="font-weight-bolder mb-0">'.$suma.' RON </h7>';
                     
                     }
                     $sql2="SELECT SUM(valoare) AS total_vanzari2  FROM comenzi WHERE YEAR(data_ex) = YEAR(CURRENT_DATE() - INTERVAL 1 YEAR)";
@@ -652,8 +654,6 @@ include 'connect.php';
       </div>
 
 <?php
-
-
                 $months = array(
                   'January',
                   'February',
@@ -668,12 +668,7 @@ include 'connect.php';
                   'November',
                   'December'
                   );
-
                             $monthsUpToCurrent = array_slice($months, 0, date('n'));
-
-                            // Print the array to check the result
-                                                    
-
                         for($x = 1 ; $x<=date('n') ; $x++)
                                       {
                                           $sql="SELECT SUM(continut.cantitate * tablouri.pret) AS amount
@@ -724,18 +719,12 @@ include 'connect.php';
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   <script>
-   
-
     var ctx2 = document.getElementById("chart-line").getContext("2d");
-
     var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
-
     gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
     gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
     gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
-
     var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
-
     gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
     gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
     gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
