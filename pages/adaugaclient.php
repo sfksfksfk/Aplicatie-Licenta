@@ -1,19 +1,4 @@
 
-
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.7
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +8,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../media/favicon4.png">
   <title>
-    Clienti
+  Mirela Sofica ART
   </title>
   <!--     Fonts and icons     -->
   <link href="../assets/css/fontopensans.css" rel="stylesheet" />
@@ -200,10 +185,7 @@
        
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-           <!-- <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
-            </div>-->
+      
           </div>
           <ul class="navbar-nav  justify-content-end">
             

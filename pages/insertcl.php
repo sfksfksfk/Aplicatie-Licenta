@@ -3,21 +3,6 @@ include 'connect.php';
 
 ?>
 
-
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.7
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,8 +12,7 @@ include 'connect.php';
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
-    Clienti
-  </title>
+  Mirela Sofica ART  </title>
   <!--     Fonts and icons     -->
   <link href="../assets/css/fontopensans.css" rel="stylesheet" />
   <!-- Nucleo Icons -->

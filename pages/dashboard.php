@@ -3,20 +3,6 @@ include 'connect.php';
 
 ?>
 
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.7
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +12,7 @@ include 'connect.php';
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
-    Depozit de picturi electronic 
+  Mirela Sofica ART
   </title>
   <!--     Fonts and icons     -->
   <link href="../assets/css/fontopensans.css" rel="stylesheet" />
@@ -342,6 +328,7 @@ include 'connect.php';
                      
                       $row2=mysqli_fetch_assoc($result2);
                       $suma2=$row2['total_vanzari2'];
+                      
                       if($suma2<$suma AND $suma2>0){                      
                       $diferenta=$suma-$suma2;
                       $procent=($diferenta*100)/$suma2;
@@ -718,16 +705,17 @@ include 'connect.php';
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/chartjs.min.js"></script>
+
   <script>
     var ctx2 = document.getElementById("chart-line").getContext("2d");
     var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
     gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
     gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
+    gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //culoarea 1
     var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
     gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
     gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
+    gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //culoarea 2
 
     new Chart(ctx2, {
       type: "line", 
@@ -817,6 +805,8 @@ include 'connect.php';
       },
     });
   </script>
+
+
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {

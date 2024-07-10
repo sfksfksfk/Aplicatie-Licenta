@@ -3,20 +3,6 @@ include 'connect.php';
 
 ?>
 
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.7
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +12,7 @@ include 'connect.php';
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
-    Depozit de picturi electronic
+  Mirela Sofica ART 
   </title>
   <!--     Fonts and icons     -->
   <link href="../assets/css/fontopensans.css" rel="stylesheet" />
@@ -290,7 +276,8 @@ include 'connect.php';
                     // Update the data in the tablouri table
                     $sql = "UPDATE tablouri 
                             SET titlu='$titlu', tehnica='$tehnica', tema='$tema', subiect='$subiect', 
-                                descriere='$descriere', sezon='$sezon', pret=$pret, stoc=$stoc, poza='$filename', lungime='$lungime', latime='$latime'
+                                descriere='$descriere', sezon='$sezon', pret=$pret, 
+                                stoc=$stoc, poza='$filename', lungime='$lungime', latime='$latime'
                             WHERE id_tablou=$id";
 
                     if (mysqli_query($con, $sql)) {

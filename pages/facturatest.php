@@ -39,7 +39,7 @@ if (isset($_GET['id'])) {
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
-    Mirela Sofica
+  Mirela Sofica ART
   </title>
       <style>
         body {

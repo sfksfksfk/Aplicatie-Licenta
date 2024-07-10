@@ -4,20 +4,6 @@ include 'connect.php';
 
 
 
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.7
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +13,7 @@ include 'connect.php';
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
-    Soft UI Dashboard by Creative Tim
+    Mirela Sofica ART
   </title>
   <!--     Fonts and icons     -->
   <link href="../assets/css/fontopensans.css" rel="stylesheet" />
@@ -335,9 +321,9 @@ include 'connect.php';
         <div class="col-lg-12">
           <div class="row">
             
-          <div class="col-md-3 mb-lg-0 mb-4">
+          <div class="col-md-9 mb-lg-0 mb-4">
             </div>
-            <div class="col-md-6 mb-lg-0 mb-4">
+            <div class="col-md-12 mb-lg-0 mb-4">
               <div class="card mt-0">
                 <div class="card-header pb-0 p-3">
                   <div class="row">
@@ -399,7 +385,26 @@ include 'connect.php';
                                 $counter = 1;
                                 while ($row = $result->fetch_assoc()) {
                                     echo '<div data-value="' . $row['id_perete'] . '" class="select-option perete-option">';
-                                    echo '<img src="../media/poze_pereti/' . $row['poza_perete'] . '" alt="perete-' . $counter . '"> perete-' . $counter;
+                                    echo '<img src="../media/poze_pereti/' . $row['poza_perete'] . '" alt="perete-' . $counter . '"> perete-' ; 
+                                    
+
+                                    
+                                    if ($counter == 0) {
+                                      echo "minimalist";
+                                  } elseif ($counter == 1) {
+                                      echo "mediteranean";
+                                  } elseif ($counter == 2) {
+                                      echo "minimalist";
+                                  } elseif ($counter == 3) {
+                                    echo "modern";
+                                  } elseif ($counter == 4) {
+                                    echo "art-deco";
+                                  } elseif ($counter == 5) {
+                                    echo "vintage";
+                                  } elseif ($counter == 6) {
+                                    echo "vintage";
+                                  } 
+                                  
                                     echo '</div>';
                                     $counter++;
                                 }

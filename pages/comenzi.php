@@ -4,20 +4,6 @@ include 'connect.php';
 ?>
 
 
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.7
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +13,7 @@ include 'connect.php';
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
-    Comenzi
+  Mirela Sofica ART
   </title>
   <!--     Fonts and icons     -->
   <link href="../assets/css/fontopensans.css" rel="stylesheet" />
@@ -236,7 +222,24 @@ include 'connect.php';
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
-            <div class="card-header pb-0">
+        <div> &nbsp</div>
+
+                <div class="row justify-content-center">
+                      <div class="col-3 w-20">
+                          <a class="btn bg-gradient-primary mt-0 w-100" href="comenzi.php">Toate</a>
+                      </div>
+                      <div class="col-3 w-20">
+                          <a class="btn bg-gradient-secondary mt-0 w-100" href="comenzi1l.php">Ultima luna</a>
+                      </div>
+                      <div class="col-3 w-20">
+                          <a class="btn bg-gradient-secondary mt-0 w-100" href="comenzi6l.php">Ultimele 6 luni</a>
+                      </div>
+                      <div class="col-3 w-20">
+                          <a class="btn bg-gradient-secondary mt-0 w-100" href="comenzi12l.php">Ultimele 12 luni</a>
+                      </div>
+                      
+                </div>
+              <div class="card-header pb-0">
               <h6>Comenzile tale</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
@@ -246,6 +249,7 @@ include 'connect.php';
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">id</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">adresa</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">client</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">data expedierii</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">valoare</th>
                     </tr>
@@ -261,7 +265,10 @@ include 'connect.php';
 
 
                   <?php             
-                    $sql="SELECT * FROM comenzi ORDER BY idcomanda DESC";
+                    $sql="SELECT comenzi.*, clienti.nume 
+                            FROM comenzi 
+                            JOIN clienti ON comenzi.id_client = clienti.client_id
+                                                        ORDER BY comenzi.data_ex DESC;";
                     $result=mysqli_query($con,$sql);
                     if($result){
 
@@ -272,6 +279,7 @@ include 'connect.php';
                             $dataex=$row['data_ex'];
                             $oras=$row['oras'];
                             $strada=$row['stradanr'];
+                            $numec=$row['nume'];
                     
                             echo '
                             <tr>
@@ -290,6 +298,9 @@ include 'connect.php';
                               <td>
                                   <a href="vizcomanda.php?id='.$id.'">
                                 <p class="text-sm font-weight-bold mb-0">'.$oras.' '.$strada.'</p></a>
+                              </td>
+                              <td>
+                                    <h6 class="mb-0 text-sm">'.$numec.'</h6>
                               </td>
                               <td>
                                 <span class="text-xs font-weight-bold">'.$dataex.'</span>

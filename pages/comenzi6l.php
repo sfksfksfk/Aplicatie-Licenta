@@ -3,17 +3,16 @@ include 'connect.php';
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, ">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon4.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon4.png">
   <title>
-  Mirela Sofica ART 
+  Mirela Sofica ART
   </title>
   <!--     Fonts and icons     -->
   <link href="../assets/css/fontopensans.css" rel="stylesheet" />
@@ -28,18 +27,9 @@ include 'connect.php';
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
-  <style>
-     td:nth-child(4) {
-                width: 40%;
-            }
-
-
-  </style>
-
-
 </head>
 
-<body class="g-sidenav-show bg-gray-100">
+<body class="g-sidenav-show  bg-gray-100">
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
     <div class="sidenav-header">
 
@@ -71,7 +61,7 @@ include 'connect.php';
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active " href="tablouri.php">
+          <a class="nav-link  " href="tablouri.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -133,7 +123,7 @@ include 'connect.php';
         </li>
         
         <li class="nav-item">
-          <a class="nav-link  " href="comenzi.php">
+          <a class="nav-link active " href="comenzi.php">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
@@ -188,17 +178,21 @@ include 'connect.php';
     </div>
   </aside>
 
-  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
+
+
+
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
+       
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-              <!--PLACEHOLDER PT BUTOANELE DIN DREAPTA-->
+           <!-- <div class="input-group">
+              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="Type here...">
+            </div>-->
           </div>
-
-          
           <ul class="navbar-nav  justify-content-end">
             
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -215,218 +209,129 @@ include 'connect.php';
         </div>
       </div>
     </nav>
-
-
-
     <!-- End Navbar -->
-    <div class="container-fluid py-0">
-      <div class="row" >
-        <div id="mainFrameOne">
-        <div class="col-12 mt-0" id="mainFrameOne">
-          
-          <div class="card mb-4">
-            
-            <div class="card-header pb-0 p-3">
-              <h6 class="mb-1">Ultimele 4 tablouri incarcate</h6>
-            </div>
-            <div class="card-body p-3 justify-content-center">
-              <div class="row justify-content-center">              
-              <?php                                
-$sqlult3="SELECT * FROM tablouri ORDER BY id_tablou DESC LIMIT 4";
-$result=mysqli_query($con,$sqlult3);
-if($result){    
-    while($row=mysqli_fetch_assoc($result)){
-        $id=$row['id_tablou'];
-        $nume=$row['titlu'];
-        $tehnica=$row['tehnica'];
-        $sezon=$row['sezon'];
-        $pret=$row['pret'];
-        $stoc=$row['stoc'];
-        $poza=$row['poza'];
+    <div class="container-fluid py-4">
         
-            echo '
-            <div class="col-xl-2 col-md-6 mb-xl-0 mb-4">
-              <div class="card card-blog card-plain">
-                <div class="position-relative">
-                  <a href = "viztablou.php?id='.$id.'" class="d-block shadow-xl border-radius-xl">
-                    <img src="../media/poze_tablouri/'.$poza.'" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl" height="400">
-                  </a>
-                </div>
-                <div class="card-body px-0  pb-0">
-                  <p class="text-gradient text-dark mb-2 text-sm"><small>Tabloul #'.$id.'</small></p>
-                  <a href="vizprodus.php?id='.$id.'">
-                    <h6>
-                      '.$nume.'
-                    </h6>
-                  </a>
-                  <p class="mb-4 text-sm">
-                    Sezon : '.$sezon.'</br>
-                    Mai ai pe stoc : '.$stoc.' bucati
-                  </p>
-                    <a class="d-flex align-items-center justify-content-between" href="viztablou.php?id='.$id.'">
-                    <p  class="btn btn-outline-primary btn-sm mb-0">Vizualizeaza Tablou</p>
-                    </a>
-                </div>
-              </div>
-            </div>
-            ';
-    }
-}
-   
-?>
-                
-                
-                
-                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                  <div class="card h-100 card-plain border bg-gradient-primary ">
-                    <div class="card-body d-flex flex-column justify-content-center text-center">
-                      <a href="adaugatablou.php">
-                        <i class="fa fa-plus text-white mb-3"></i>
-                        <h5 class=" text-white"> Tablou nou </h5>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div></div>
-        
-        <div id="mainFrameTwo">
-        <div class="col-12" >
+
+
+
+
+
+
+      <div class="row">
+        <div class="col-12">
           <div class="card mb-4">
-            <div class="card-header pb-0">
-             <div class="row">
-             <div class="col-3 ">
-              <h6>Tablouri</h6>
-              </div>
-              <div class="col-6 ">
-              </div>
-              <div class="col-3 ">
-                          <a class="btn bg-gradient-primary mt-0 w-100" target=”_blank” href="fisastoctablou.php">Fisa de stoc</a>
+        <div> &nbsp</div>
+
+                <div class="row justify-content-center">
+                      <div class="col-3 w-20">
+                          <a class="btn bg-gradient-secondary mt-0 w-100" href="comenzi.php">Toate</a>
                       </div>
-            </div>
+                      <div class="col-3 w-20">
+                          <a class="btn bg-gradient-secondary mt-0 w-100" href="comenzi1l.php">Ultima luna</a>
+                      </div>
+                      <div class="col-3 w-20">
+                          <a class="btn bg-gradient-primary mt-0 w-100" href="comenzi6l.php">Ultimele 6 luni</a>
+                      </div>
+                      <div class="col-3 w-20">
+                          <a class="btn bg-gradient-secondary mt-0 w-100" href="comenzi12l.php">Ultimele 12 luni</a>
+                      </div>
+                      
+                </div>
+              <div class="card-header pb-0">
+              <h6>Comenzile tale</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <col style="width: 10%;" />
- 
-                   <col style="width: 10%;" />
- 
-                   <thead>
+                <table class="table align-items-center justify-content-center mb-0">
+                  <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Titlu si tehnica</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tema si subiect</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sezon</th>
-                      <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Dimensiune (cm)</th>
-                      <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Stoc</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Pret</th>
-                      <th class="text-secondary opacity-7"></th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">id</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">adresa</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">client</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">data expedierii</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">valoare</th>
                     </tr>
                   </thead>
                   <tbody>
+                  <tr>
+                      <td colspan="7" class="align-middle text-center">
+                        <a href="adaugacomanda.php" class="text-primary font-weight-bold text-xl  mb-0">
+                            <i class="fa fa-plus"></i> Adauga o comanda noua</a>
+                      </td>
+                    </tr>
 
-                    
 
 
+                  <?php             
+                    $sql="SELECT comenzi.*, clienti.nume 
+                            FROM comenzi 
+                            JOIN clienti ON comenzi.id_client = clienti.client_id
+                            WHERE comenzi.data_ex >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH)
+                            ORDER BY comenzi.data_ex DESC;";
+                    $result=mysqli_query($con,$sql);
+                    if($result){
 
-                    
-                  
-            
-          <?php
-    $sql="select * from tablouri";
-    $result=mysqli_query($con,$sql);
-    if($result){
+                        
+                        while($row=mysqli_fetch_assoc($result)){
+                            $id=$row['idcomanda'];
+                            $valoare=$row['valoare'];
+                            $dataex=$row['data_ex'];
+                            $oras=$row['oras'];
+                            $strada=$row['stradanr'];
+                            $numec = $row['nume'];
+                            echo '
+                            <tr>
+                              <td>
+                                <div class="d-flex px-2">
+                                  <div>
+                                  <a href="vizcomanda.php?id='.$id.'">
+                                  <i class="fa fa-archive me-2"></i>   </a>
+                                  </div>
+                                  <div class="my-auto">
+                                  <a href="vizcomanda.php?id='.$id.'">
+                                    <h6 class="mb-0 text-sm">#'.$id.'</h6></a>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                  <a href="vizcomanda.php?id='.$id.'">
+                                <p class="text-sm font-weight-bold mb-0">'.$oras.' '.$strada.'</p></a>
+                              </td>
+                              <td>
+                                <h6 class="mb-0 text-sm">'.$numec.'</h6>
+                              </td>
+                              <td>
+                                <span class="text-xs font-weight-bold">'.$dataex.'</span>
+                              </td>
+                              <td class="align-middle text-center">
+                                <div class="d-flex ">
+                                  <span class="me-2 text-xs font-weight-bold">'.$valoare.' RON</span>                                  
+                                </div>
+                              </td> 
+                              <td class="align-middle text-center">
+                                <div class="d-flex ">
 
-        
-        while($row=mysqli_fetch_assoc($result)){
-            $id=$row['id_tablou'];
-            $titlu=$row['titlu'];
-            $tehnica=$row['tehnica'];
-            $tema=$row['tema'];
-            $subiect=$row['subiect'];
-            $descriere=$row['descriere'];
-            $poza=$row['poza'];
-            $pret=$row['pret'];
-            $sezon=$row['sezon'];
-            $stoc=$row['stoc'];
-            $lungime=$row['lungime'];
-            $latime=$row['latime'];
+                                <a href="facturatest.php?id='.$id.'" target="_blank" class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> Factura</a>
+                                                         
+                                </div>
+                              </td>                          
 
-          echo ' <tr>
-          <td>
-            <div class="d-flex px-2 py-1">
-              <div> <a href = "viztablou.php?id='.$id.'" >
-                <img src="../media/poze_tablouri/'.$poza.'" class="avatar avatar-sm me-3" alt="user1"></a >
-              </div>
-              <div class="d-flex flex-column justify-content-center"> <a href = "viztablou.php?id='.$id.'" >
-                <h6 class="mb-0 text-sm">'.$titlu.'</h6>
-                <p class="text-xs text-secondary mb-0">'.$tehnica.'</p></a>
-              </div>
-            </div>
-          </td>
-          <td>
-            <p class="text-xs font-weight-bold mb-0">'.$tema.'</p>
-            <p class="text-xs text-secondary mb-0">'.$subiect.'</p>
-          </td>
-          <td class="align-middle text-center text-sm">
-          ';
-          if($sezon == "primavara"){
-            echo'            <span class="badge badge-sm bg-gradient-success">'.$sezon.'</span>';
-            }
-          if($sezon == "vara"){
-                echo'            <span class="badge badge-sm bg-gradient-danger">'.$sezon.'</span>';
-                }
-          if($sezon == "toamna"){
-                    echo'            <span class="badge badge-sm bg-gradient-secondary">'.$sezon.'</span>';
-                    }
-          if($sezon == "iarna"){
-                        echo'            <span class="badge badge-sm bg-gradient-info">'.$sezon.'</span>';
+                                                   
+                            </tr>';
                         }
-          
-          echo '
-          </td>
-       
-          <td class="align-middle text-center">
-            <span class="text-secondary text-xs font-weight-bold">'.$latime.'x'.$lungime.'</span>
-          </td>
-          <td class="align-middle text-center">
-            <span class="text-secondary text-xs font-weight-bold">'.$stoc.'</span>
-          </td>
-          <td>
-            <div class="d-flex px-2 py-1">
-              
-              <div class="d-flex flex-column justify-content-center">
-                <h6 class="mb-0 text-sm">'.$pret.'</h6>
-                <p class="text-xs text-secondary mb-0">ron</p>
-              </div>
-            </div>
-          </td>
-          
-          <td class="align-middle">
-            <a href="editeazatablou.php?id='.$id.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" 
-            data-original-title="Edit user">
-              Edit
-            </a>
-          </td>
-        </tr>';
-        
-        }
-    }
-    ?>
+                    }
+                            ?>
+
+                    
 
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
-        </div></div>
-        
-        
-        
+        </div>
       </div>
-
 
       <footer class="footer pt-3  ">
         <div class="container-fluid">
@@ -436,27 +341,19 @@ if($result){
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-                URA <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Sofica Radu</a>
-                for a better web.
+                Lucrare de licenta realizata de
+                <a href="" class="font-weight-bold" target="_blank">Sofica Radu</a>
+                in cadrul URA.
               </div>
-            </div>
-            
+            </div>           
           </div>
         </div>
+
       </footer>
     </div>
-  </div>
-
+  </main>
+  
   <!--   Core JS Files   -->
-  <script>
-     function schimbare1() { 
-    document.getElementById("mainFrameOne").style.display="none"; 
-    document.getElementById("mainFrameTwo").style.display="block"; 
-}
-
-  </script>
-
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -474,7 +371,6 @@ if($result){
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
-
 </body>
 
 </html>
